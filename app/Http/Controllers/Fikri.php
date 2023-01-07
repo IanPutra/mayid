@@ -19,10 +19,8 @@ class Fikri extends Controller
         // SELECT * FROM 'product'
         $data = Product::get();
 
-        var_dump($data);
-
         // manggil file view nya
-        return view('fikri.index');
+        return view('fikri.index',['products'=>$data]);
     }
 
     /**
