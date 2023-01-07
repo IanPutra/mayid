@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class Fikri extends Controller
 {
@@ -13,7 +14,15 @@ class Fikri extends Controller
      */
     public function index()
     {
-        //
+        // variabel data bakal diisi data dari model namanya product
+
+        // SELECT * FROM 'product'
+        $data = Product::get();
+
+        var_dump($data);
+
+        // manggil file view nya
+        return view('fikri.index');
     }
 
     /**
