@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Ian;
 use App\Http\Controllers\Yosef;
 use App\Http\Controllers\Fikri;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,34 +20,12 @@ use App\Http\Controllers\Fikri;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
 
-Route::get('/customer', function () {
-    return view('customer_view.index');
+Route::prefix('dashboard')->group(function () {
+    Route::resource('/admin', AdminController::class);
+    Route::resource('/customer', CustomerController::class);
+    Route::resource('/product', ProductController::class);
 });
-
-Route::get('/about', function () {
-    return view('customer_view.about');
-});
-
-Route::get('/contact', function () {
-    return view('customer_view.contact');
-});
-
-Route::get('/services', function () {
-    return view('customer_view.services');
-});
-
-Route::get('/product', function () {
-    return view('customer_view.product');
-});
-
-Route::get('/admin', function () {
-    return view('customer_view.product');
-});
-
 
 Route::prefix('ian')->group(function () {
     Route::resource('/', Ian::class);
