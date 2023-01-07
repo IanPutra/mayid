@@ -158,7 +158,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Product & Services</span>
+            <span class="nav-link-text ms-1">Product</span>
           </a>
         </li>
         <li class="nav-item">
@@ -178,7 +178,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Ongoing Orders</span>
+            <span class="nav-link-text ms-1">Sold</span>
           </a>
         </li>
         <li class="nav-item">
@@ -198,7 +198,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Done Orders</span>
+            <span class="nav-link-text ms-1">Services</span>
           </a>
         </li>
         <li class="nav-item">
@@ -218,7 +218,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Sold Spare Part</span>
+            <span class="nav-link-text ms-1">Progress</span>
           </a>
         </li>
         <li class="nav-item">
