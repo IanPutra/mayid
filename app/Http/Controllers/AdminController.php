@@ -15,7 +15,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $data = admin::get();
+
+        return view('admin.newadmin',['data'=>$data]);
     }
 
     /**

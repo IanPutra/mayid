@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Admin;
 
 class Yosef extends Controller
 {
@@ -14,7 +15,12 @@ class Yosef extends Controller
      */
     public function index()
     {
-        //
+
+
+        $data = Admin::get();
+
+        //manggil function + loop
+        return view('Yosef.admin',['datas' => $data]);
     }
 
     /**

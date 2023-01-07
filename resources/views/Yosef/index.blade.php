@@ -10,5 +10,18 @@
     <h1>
         Bismillah jago coding
     </h1>
+
+
+
+    
+    @foreach($datas as $data)
+    <p>
+        {{$data->username}}
+    </p>
+    @endforeach
+
+
+
+
 </body>
 </html>
