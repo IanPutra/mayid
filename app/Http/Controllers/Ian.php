@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Customer;
 
 class Ian extends Controller
 {
@@ -13,7 +14,9 @@ class Ian extends Controller
      */
     public function index()
     {
-        //
+        $data = Customer::get();
+        
+        return view ('Ian.index',['customer'=>$data]);
     }
 
     /**
