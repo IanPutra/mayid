@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Ian;
+use App\Http\Controllers\Yosef;
+use App\Http\Controllers\Fikri;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +45,14 @@ Route::get('/admin', function () {
 });
 
 
+Route::prefix('ian')->group(function () {
+    
+});
+
+Route::prefix('yosef')->group(function () {
+    
+});
+
+Route::prefix('fikri')->group(function () {
+    
+});
