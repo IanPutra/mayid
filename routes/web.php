@@ -46,13 +46,13 @@ Route::get('/admin', function () {
 
 
 Route::prefix('ian')->group(function () {
-    
+    Route::resource('photos', Ian::class);
 });
 
 Route::prefix('yosef')->group(function () {
-    
+    Route::resource('photos', Yosef::class);
 });
 
 Route::prefix('fikri')->group(function () {
-    
+    Route::resource('photos', Fikri::class);
 });
