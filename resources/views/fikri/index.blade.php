@@ -9,7 +9,7 @@
 <body>
     <h1>Ini halaman Fikri</h1>
     @foreach($products as $product)
-    <p> {{ $product->name }} </p>
+        <p> {{ $product->name }} </p>
     @endforeach
 </body>
 </html>
