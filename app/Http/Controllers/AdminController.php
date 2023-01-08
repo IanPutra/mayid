@@ -27,7 +27,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -38,7 +38,26 @@ class AdminController extends Controller
      */
     public function store(StoreadminRequest $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'dateof_birth' => 'required',
+            'gender' => 'required|not_in:0',
+            'department' => 'required'
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'dateof_birth' => $request->dateof_birth,
+            'gender' => $request->price,
+            'department'=> $request->department
+        ];
+
+        Admin::create($data);
+
+        return redirect('/dashboard/admin')->with('status','New data has been added');
+
     }
 
     /**
