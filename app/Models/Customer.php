@@ -10,7 +10,7 @@ class Customer extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $primarykey = 'customer_id';
+    protected $primaryKey = 'customer_id';
 
     protected $table = "customer";
     protected $fillable = [

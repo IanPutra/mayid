@@ -12,13 +12,12 @@ class Admin extends Model
     public $timestamps = false;
     protected $primaryKey = 'admin_id';
 
-    protected $table = "admin";
+    protected $table = "customer";
     protected $fillable = [
         'username',
         'e_mail',
         'dateof_birth',
         'password',
         'gender',
-        'department',
     ];
 }

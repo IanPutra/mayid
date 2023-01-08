@@ -106,7 +106,7 @@ class ProductController extends Controller
         // update data
         $data->name = $request->name;
         $data->type = $request->type;
-        $data->description = $data->description;
+        $data->description = $request->description;
         $data->price = $request->price;
 
         // save data yang telah diupdate

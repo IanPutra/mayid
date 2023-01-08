@@ -18,9 +18,21 @@
             <div class="col-md-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Customer table</h6>
+                        <div class="row">
+                            <div class="col-lg-auto">
+                                <h6>Customer table</h6>
+                            </div>
+                            <div class="col-lg-auto ms-auto">
+                                <a href="{{ url('/dashboard/customer/create') }}" class="btn btn-success">Add new customer</a>
+                            </div>
+                        </div>
                     </div>
                 <div class="card-body px-0 pt-0 pb-2">
+                    @if(session()->has('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                 <div class="table-responsive p-0">
                     <table class="table align-items-center mb-0">
                         <thead>
@@ -55,10 +67,15 @@
                                 <td class="align-middle text-center">
                                     <span class="text-secondary text-xs font-weight-bold">{{$cust->gender}}</span>
                                 </td>
-                                <td class="align-middle">
-                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
+                                <td class="align-middle text-center d-flex">
+                                    <a href="{{ url('/dashboard/customer/'.$cust->customer_id.'/edit') }}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-original-title="Edit customer">
+                                    <i class="fas fa-pencil"></i>
                                     </a>
+                                    <form action="{{ url('dashboard/customer/'.$cust->customer_id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger ms-2 btn-sm" onclick="return confirm('Are you sure you want to delete customer {{ $cust->username }} ?');"><i class="fas fa-trash"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
