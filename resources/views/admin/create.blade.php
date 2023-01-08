@@ -33,10 +33,9 @@
                                 </div>
                                 @enderror
 
-
                                 {{-- kolom email --}}
                                 <label class="mt-2" for="description">E-mail</label>
-                                <input type="text" name="email" id="name" class="form-control @error('email') is-invalid @enderror" placeholder="email" >
+                                <input type="email" name="email" id="name" class="form-control @error('email') is-invalid @enderror" placeholder="email" >
                                 @error('email')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -45,8 +44,34 @@
 
                                 {{-- kolom umur --}}
                                 <label class="mt-2" for="price">Date of birth</label>
-                                <input type="number" name="umur" id="umur" class="form-control @error('umur') is-invalid @enderror" placeholder="Date of birth" value="@old('Date of birth')">
+                                <input type="date" name="umur" id="umur" class="form-control @error('umur') is-invalid @enderror" placeholder="Date of birth" value="@old('Date of birth')">
                                 @error('price')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
+                                {{-- kolom gender --}}
+                                <label class="mt-2" for="type">Gender</label>
+                                <select name="gender" id="gender" class="form-select @error('gender') is-invalid @enderror">
+                                    <option value="">Select type</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                                @error('gender')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
+                                {{-- kolom department --}}
+                                <label class="mt-2" for="type">Department</label>
+                                <select name="department" id="department" class="form-select @error('department') is-invalid @enderror">
+                                    <option value="">Select type</option>
+                                    <option value="Binus">Bina Nusantara</option>
+                                    <option value="Non-Binus">Non-Bina Nusantara</option>
+                                </select>
+                                @error('department')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
