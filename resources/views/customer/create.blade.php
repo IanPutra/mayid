@@ -35,9 +35,9 @@
 
                                 @csrf
                                 {{-- kolom e-mail --}}
-                                <label class="mt-2" for="e-mail">E-mail</label>
-                                <input type="e-mail" name="e-mail" id="e-mail" class="form-control @error('e-mail') is-invalid @enderror" placeholder="Customer e-mail" >
-                                @error('e-mail')
+                                <label class="mt-2" for="e_mail">E-mail</label>
+                                <input type="e_mail" name="e_mail" id="e_mail" class="form-control @error('e_mail') is-invalid @enderror" placeholder="Customer e-mail" >
+                                @error('e_mail')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
