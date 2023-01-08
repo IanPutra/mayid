@@ -43,7 +43,8 @@ class ProductController extends Controller
             'name' => 'required',
             'type' => 'required|not_in:0',
             'description' => 'required',
-            'price' => 'required|gt:0'
+            'price' => 'required|gt:0',
+            'amount' => 'required|gt:0',
         ]);
 
         // memasukkan data dari form ke variabel array
@@ -52,6 +53,7 @@ class ProductController extends Controller
             'type' => $request->type,
             'description' => $request->description,
             'price' => $request->price,
+            'amount' => $request->amount
         ];
 
         // create data menggunakan parameter $data
@@ -100,7 +102,8 @@ class ProductController extends Controller
             'name' => 'required',
             'type' => 'required|not_in:0',
             'description' => 'required',
-            'price' => 'required|gt:0'
+            'price' => 'required|gt:0',
+            'amount' => 'required|gt:0'
         ]);
 
         // update data
@@ -108,6 +111,7 @@ class ProductController extends Controller
         $data->type = $request->type;
         $data->description = $request->description;
         $data->price = $request->price;
+        $data->amount = $request->amount;
 
         // save data yang telah diupdate
         $data->save();
