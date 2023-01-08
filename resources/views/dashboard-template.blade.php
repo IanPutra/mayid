@@ -100,7 +100,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/customer*') ? 'active' : '' }}" href="{{ url('/dashboard/customer') }}">
+          <a class="nav-link {{ Request::is('dashboard/admin*') ? 'active' : '' }}" href="{{ url('/dashboard/admin') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -142,7 +142,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/event-organizer*') ? 'active' : '' }}" href="{{ url('/dashboard/event-organizer') }}">
+          <a class="nav-link {{ Request::is('dashboard/product*') ? 'active' : '' }}" href="{{ url('/dashboard/product') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>catalog</title>
