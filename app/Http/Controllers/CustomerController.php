@@ -109,7 +109,7 @@ class CustomerController extends Controller
         // update data
         $data->username = $request->username;
         $data->e_mail = $request->e_mail;
-        $data->dateof_birth = $data->dateof_birth;
+        $data->dateof_birth = $request->dateof_birth;
         $data->gender = $request->gender;
         $data->password = $request->password;
 

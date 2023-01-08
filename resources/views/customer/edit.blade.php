@@ -37,7 +37,7 @@
                                 
                                 {{-- kolom e-mail --}}
                                 <label class="mt-2" for="e_mail">E-mail</label>
-                                <input type="e_mail" name="e_mail" id="e_mail" class="form-control @error('e_mail') is-invalid @enderror" placeholder="Customer e-mail">{{ $customer->e_mail }}">
+                                <input type="e_mail" name="e_mail" id="e_mail" class="form-control @error('e_mail') is-invalid @enderror" placeholder="Customer e-mail" value="{{ $customer->e_mail }}">
                                 @error('e_mail')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -46,7 +46,7 @@
 
                                 {{-- kolom date --}}
                                 <label class="mt-2" for="dateof_birth">Date of Birth</label>
-                                <input type="date" name="dateof_birth" id="dateof_birth" class="form-control @error('dateof_birth') is-invalid @enderror" placeholder="Customer dateof_birth">{{ $customer->dateof_birth }}">
+                                <input type="date" name="dateof_birth" id="dateof_birth" class="form-control @error('dateof_birth') is-invalid @enderror" placeholder="Customer dateof_birth" value="{{ $customer->dateof_birth }}">
                                 @error('dateof_birth')
                                 <div class="invalid-feedback">
                                     {{ $message }}
