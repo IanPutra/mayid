@@ -28,6 +28,11 @@
                         </div>
                     </div>
                 <div class="card-body px-0 pt-0 pb-2">
+                    @if(session()->has('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                 <div class="table-responsive p-0">
                     <table class="table align-items-center mb-0">
                         <thead>
