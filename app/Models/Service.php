@@ -10,15 +10,17 @@ class Service extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $primarykey = 'service_id';
+    protected $primaryKey = 'service_id';
 
-    protected $table = "admin";
+    protected $table = "service";
     protected $fillable = [
-        'username',
-        'e_mail',
-        'dateof_birth',
-        'password',
-        'gender',
-        'department',
+        'customer_id',
+        'payment_id',
+        'device_name',
+        'service_start_time',
+        'service_status',
+        'service_end_time',
+        'device_pickup_time',
+        'price',
     ];
 }

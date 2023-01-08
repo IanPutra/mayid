@@ -17,7 +17,6 @@ class Progress extends Model
         'service_id',
         'admin_id',
         'time',
-        'payment_verification',
-        'time_verification',
+        'detail'
     ];
 }

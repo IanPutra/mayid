@@ -10,14 +10,13 @@ class Payment extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $primarykey = 'payment_id';
+    protected $primaryKey = 'payment_id';
 
     protected $table = "payment";
     protected $fillable = [
         'method',
         'time',
         'payment_verification',
-        'time_verification',
-        'status',
+        'time_verification'
     ];
 }

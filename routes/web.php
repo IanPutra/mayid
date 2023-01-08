@@ -8,6 +8,7 @@ use App\Http\Controllers\Fikri;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,10 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('/admin', AdminController::class);
     Route::resource('/customer', CustomerController::class);
     Route::resource('/product', ProductController::class);
+    Route::resource('/service', ServiceController::class);
+    Route::get('service/{id}/progress', [ServiceController::class, 'editprogress']);
+    Route::post('service/update-progress', [ServiceController::class, 'updateprogress']);
+    Route::post('service/pickup', [ServiceController::class, 'pickup']);
 });
 
 Route::prefix('ian')->group(function () {
