@@ -128,7 +128,7 @@ class ProductController extends Controller
      */
     public function destroy($product)
     {
-        $data = Product::find($product)->first();
+        $data = Product::find($product);
 
         $data->delete();
         return redirect('/dashboard/product')->with('status','Data '.$data->name.' has been removed');
