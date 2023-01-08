@@ -82,7 +82,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        $data = Product::find($customer)->first();
+        $data = Customer::find($customer)->first();
         return view('customer.edit',['customer'=>$data]);
     }
 
@@ -93,9 +93,9 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCustomerRequest $request, Customer $customer)
+    public function update(Request $request, $customer)
     {
-        $data = Product::find($customer)->first();
+        $data = Customer::find($customer)->first();
 
         // validasi data
         $request->validate([

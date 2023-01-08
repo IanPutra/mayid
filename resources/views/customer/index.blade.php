@@ -62,19 +62,14 @@
                                 <td class="align-middle text-center">
                                     <span class="text-secondary text-xs font-weight-bold">{{$cust->gender}}</span>
                                 </td>
-                                <td class="align-middle">
-                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
-                                    </a>
-                                </td>
                                 <td class="align-middle text-center d-flex">
-                                    <a href="{{ url('/dashboard/product/'.$cust->customer_id.'/edit') }}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-original-title="Edit product">
+                                    <a href="{{ url('/dashboard/customer/'.$cust->customer_id.'/edit') }}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-original-title="Edit customer">
                                     <i class="fas fa-pencil"></i>
                                     </a>
-                                    <form action="{{ url('dashboard/product/'.$cust->customer_id) }}" method="post">
+                                    <form action="{{ url('dashboard/customer/'.$cust->customer_id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger ms-2 btn-sm" onclick="return confirm('Are you sure you want to delete product {{ $cust->username }} ?');"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-danger ms-2 btn-sm" onclick="return confirm('Are you sure you want to delete customer {{ $cust->username }} ?');"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
