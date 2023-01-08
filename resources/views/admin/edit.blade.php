@@ -18,12 +18,15 @@
             <div class="col-md-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Add Admin</h6>
+                        <h6>Edit Admin</h6>
                     </div>
                     <div class="card-body">
                         <div class="col-lg-6">
-                            <form action="{{ url('/dashboard/admin') }}" method="post">
+                            <form action="{{ url('/dashboard/admin/'.$admin->admin_id) }}" method="post">
                                 @csrf
+                                @method('PATCH')
+                                <input type="hidden" name="id" value="{{ $admin->admin_id }}">
+
                                 {{-- kolom nama --}}
                                 <label class="mt-2" for="name">Name</label>
                                 <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Username" >
@@ -87,7 +90,7 @@
                                 @enderror
 
                                 {{-- tombol add data --}}
-                                <button class="btn btn-success mt-4">Add data</button>
+                                <button class="btn btn-success mt-4">Update data</button>
                             </form>
                         </div>
                     </div>

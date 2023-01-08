@@ -70,11 +70,16 @@
                                 <td class="align-middle text-center">
                                 <span class="text-secondary text-xs font-weight-bold">{{$datas->department}}</span>
                                 </td>
-                                <td class="align-middle">
-                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
-                                    </a>
-                                </td>
+                                <td class="align-middle text-center d-flex">
+                                            <a href="{{ url('/dashboard/admin/'.$datas->admin_id.'/edit') }}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-original-title="Edit Admin">
+                                            <i class="fas fa-pencil"></i>
+                                            </a>
+                                            <form action="{{ url('dashboard/admin/'.$datas->admin_id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger ms-2 btn-sm" onclick="return confirm('Are you sure you want to delete product {{ $datas->name }} ?');"><i class="fas fa-trash"></i></button>
+                                            </form>
+                                        </td>
                             </tr>
                         @endforeach
                         </tbody>

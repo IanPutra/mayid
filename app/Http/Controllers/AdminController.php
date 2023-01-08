@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\admin;
+use App\Models\Admin;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreadminRequest;
 use App\Http\Requests\UpdateadminRequest;
 
@@ -15,8 +16,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = admin::get();
-
+        $data = Admin::get();
         return view('admin.newadmin',['data'=>$data]);
     }
 
@@ -36,22 +36,26 @@ class AdminController extends Controller
      * @param  \App\Http\Requests\StoreadminRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreadminRequest $request)
+    public function store(Request $request)
     {
+        // kiri sesuai input name
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'dateof_birth' => 'required',
+            'umur' => 'required',
+            'password' => 'required',
             'gender' => 'required|not_in:0',
-            'department' => 'required'
+            'department' => 'required|not_in:0'
         ]);
 
+        // kiri sesuai database ~ kanan sesuai input name
         $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'dateof_birth' => $request->dateof_birth,
-            'gender' => $request->price,
-            'department'=> $request->department
+            'username' => $request->name,
+            'e_mail' => $request->email,
+            'dateof_birth' => $request->umur,
+            'password'=> $request->password,
+            'gender' => $request->gender,
+            'department'=> $request->department,
         ];
 
         Admin::create($data);
@@ -74,34 +78,59 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\admin  $admin
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
     public function edit(admin $admin)
     {
-        //
+        $data = Admin::find($admin)->first();
+        return view('admin.edit',['admin'=>$data]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateadminRequest  $request
-     * @param  \App\Models\admin  $admin
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateadminRequest $request, admin $admin)
+    public function update(Request $request, $admin)
     {
-        //
+        $data = Admin::find($admin)->first();
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'umur' => 'required',
+            'password' => 'required',
+            'gender' => 'required|not_in:0',
+            'department' => 'required|not_in:0'
+        ]);
+
+        $data->username = $request->name;
+        $data->e_mail = $request->email;
+        $data->dateof_birth = $request->umur;
+        $data->password = $request->password;
+        $data->gender = $request->gender;
+        $data->department = $request->department;
+
+        $data->save();
+
+        return redirect('/dashboard/admin')->with('status','Data '.$request->username.' has been added');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\admin  $admin
+     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(admin $admin)
+    public function destroy($admin)
     {
-        //
+        $data = Admin::find($admin)->first();
+
+        $data->delete();
+        return redirect('/dashboard/admin')->with('status','Data '.$data->username.' has been removed');
     }
 }

@@ -10,7 +10,7 @@ class Admin extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $primarykey = 'admin_id';
+    protected $primaryKey = 'admin_id';
 
     protected $table = "admin";
     protected $fillable = [
