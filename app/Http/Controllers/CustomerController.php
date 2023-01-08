@@ -27,7 +27,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('customer.create');
     }
 
     /**
@@ -36,9 +36,13 @@ class CustomerController extends Controller
      * @param  \App\Http\Requests\StoreCustomerRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCustomerRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'username' => 'required',
+            'e-mail' => 'required',
+            
+        ]);
     }
 
     /**
