@@ -146,6 +146,13 @@ class ServiceController extends Controller
         return view('service.updateprogress',['data'=>$data]);
     }
 
+    public function detailprogress($id)
+    {
+        $service = Service::find($id);
+        $progress = Progress::where('service_id','=',$id)->orderBy('time','DESC')->get();
+        return view('service.detailprogress',['progress'=>$progress,'service'=>$service]);
+    }
+
     // ini sama kaya update
     public function updateprogress(Request $request)
     {

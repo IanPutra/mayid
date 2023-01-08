@@ -28,6 +28,7 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('/product', ProductController::class);
     Route::resource('/service', ServiceController::class);
     Route::get('service/{id}/progress', [ServiceController::class, 'editprogress']);
+    Route::get('service/{id}/detail-progress', [ServiceController::class, 'detailprogress']);
     Route::post('service/update-progress', [ServiceController::class, 'updateprogress']);
     Route::post('service/pickup', [ServiceController::class, 'pickup']);
 });
