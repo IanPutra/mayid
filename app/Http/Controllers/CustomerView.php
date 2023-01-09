@@ -43,5 +43,13 @@ class CustomerView extends Controller
         return view('customer_view.services');
     }
 
+    public function login()
+    {
+        return view('customer_view.login');
+    }   
 
+    public function signUp()
+    {
+        return view('customer_view.signup');
+    }   
 }
