@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Payment;
 use App\Http\Requests\StorePaymentRequest;
 use App\Http\Requests\UpdatePaymentRequest;
+// tambahkan ke semua controller
+use Illuminate\Support\Facades\Session;
 
 class PaymentController extends Controller
 {
@@ -15,6 +17,10 @@ class PaymentController extends Controller
      */
     public function index()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Payment::get();
         return view('payment.index',['payment'=>$data]);
     }
@@ -26,7 +32,11 @@ class PaymentController extends Controller
      */
     public function create()
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/payment');
     }
 
     /**
@@ -37,7 +47,11 @@ class PaymentController extends Controller
      */
     public function store(StorePaymentRequest $request)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/payment');
     }
 
     /**
@@ -48,7 +62,11 @@ class PaymentController extends Controller
      */
     public function show(Payment $payment)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/payment');
     }
 
     /**
@@ -59,7 +77,11 @@ class PaymentController extends Controller
      */
     public function edit(Payment $payment)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/payment');
     }
 
     /**
@@ -71,7 +93,11 @@ class PaymentController extends Controller
      */
     public function update(UpdatePaymentRequest $request, Payment $payment)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/payment');
     }
 
     /**
@@ -82,6 +108,10 @@ class PaymentController extends Controller
      */
     public function destroy(Payment $payment)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/payment');
     }
 }

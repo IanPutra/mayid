@@ -12,6 +12,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SoldController;
 use App\Http\Controllers\CustomerView;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,11 +32,19 @@ Route::get('/product-buy/{id}', [CustomerView::class, 'productbuy']);
 Route::get('/about', [CustomerView::class, 'about']);
 Route::get('/services', [CustomerView::class, 'services']);
 Route::get('/contact-us', [CustomerView::class, 'contactUs']);
-Route::get('/login', [CustomerView::class, 'login']);
-Route::get('/signup', [CustomerView::class, 'signUp']);
 
+Route::get('/login', [Auth::class, 'index']);
+Route::get('/login/admin', [Auth::class, 'admin']);
+Route::post('/login', [Auth::class, 'loginCustomer']);
+Route::post('/login/admin', [Auth::class, 'loginAdmin']);
+
+Route::get('/register', [Auth::class, 'signupcustomer']);
+Route::post('/register', [Auth::class, 'registercustomer']);
+
+Route::get('/logout', [Auth::class, 'logout']);
 
 Route::prefix('dashboard')->group(function () {
+    Route::get('/', [AdminController::class, 'dashboard']);
     Route::resource('/admin', AdminController::class);
     Route::resource('/customer', CustomerController::class);
     Route::resource('/product', ProductController::class);

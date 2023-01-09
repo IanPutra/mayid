@@ -6,6 +6,8 @@ use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
+// tambahkan ke semua controller
+use Illuminate\Support\Facades\Session;
 
 class CustomerController extends Controller
 {
@@ -16,6 +18,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Customer::get();
 
         return view('customer.index',['customer'=>$data]);
@@ -28,6 +34,10 @@ class CustomerController extends Controller
      */
     public function create()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         return view('customer.create');
     }
 
@@ -39,6 +49,10 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {   
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         // validasi
         $request->validate([
             'username' => 'required',
@@ -72,7 +86,11 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/customer');
     }
 
     /**
@@ -83,6 +101,10 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Customer::find($customer)->first();
         return view('customer.edit',['customer'=>$data]);
     }
@@ -96,6 +118,10 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $customer)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Customer::find($customer)->first();
 
         // validasi data
@@ -129,6 +155,10 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Customer::find($customer)->first();
 
         $data->delete();

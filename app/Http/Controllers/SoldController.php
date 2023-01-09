@@ -9,6 +9,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreSoldRequest;
 use App\Http\Requests\UpdateSoldRequest;
+// tambahkan ke semua controller
+use Illuminate\Support\Facades\Session;
 
 class SoldController extends Controller
 {
@@ -19,6 +21,10 @@ class SoldController extends Controller
      */
     public function index()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Sold::get();
         return view('sold.newsold',['data'=>$data]);
     }
@@ -30,6 +36,10 @@ class SoldController extends Controller
      */
     public function create()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $customers = Customer::get();
         $products = Product::Get();
         return view('sold.create',['customers'=>$customers,'products'=>$products]);
@@ -43,6 +53,10 @@ class SoldController extends Controller
      */
     public function store(Request $request)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $request->validate([
             'customer'=>'required|exists:customer,customer_id',
             'product' => 'required|exists:product,product_id',
@@ -84,7 +98,11 @@ class SoldController extends Controller
      */
     public function show(Sold $sold)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/sold');
     }
 
     /**
@@ -95,7 +113,11 @@ class SoldController extends Controller
      */
     public function edit(Sold $sold)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/sold');
     }
 
     /**
@@ -107,7 +129,11 @@ class SoldController extends Controller
      */
     public function update(UpdateSoldRequest $request, Sold $sold)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/sold');
     }
 
     /**
@@ -118,11 +144,19 @@ class SoldController extends Controller
      */
     public function destroy(Sold $sold)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/sold');
     }
 
     public function deliver(Request $request)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         // variabel buat ambil jam skrg
         $now = now()->format('Y-m-d H:i:s');
 

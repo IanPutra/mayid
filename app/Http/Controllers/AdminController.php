@@ -6,6 +6,8 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreadminRequest;
 use App\Http\Requests\UpdateadminRequest;
+// tambahkan ke semua controller
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -16,8 +18,21 @@ class AdminController extends Controller
      */
     public function index()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Admin::get();
         return view('admin.newadmin',['data'=>$data]);
+    }
+
+    public function dashboard()
+    {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return view('dashboard');
     }
 
     /**
@@ -27,6 +42,10 @@ class AdminController extends Controller
      */
     public function create()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         return view('admin.create');
     }
 
@@ -38,6 +57,10 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         // kiri sesuai input name
         $request->validate([
             'name' => 'required',
@@ -72,7 +95,11 @@ class AdminController extends Controller
      */
     public function show(admin $admin)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        } 
+        return redirect('/dashboard');
     }
 
     /**
@@ -83,6 +110,10 @@ class AdminController extends Controller
      */
     public function edit(admin $admin)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Admin::find($admin)->first();
         return view('admin.edit',['admin'=>$data]);
     }
@@ -96,6 +127,10 @@ class AdminController extends Controller
      */
     public function update(Request $request, $admin)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Admin::find($admin)->first();
 
         $request->validate([
@@ -128,6 +163,10 @@ class AdminController extends Controller
      */
     public function destroy($admin)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Admin::find($admin)->first();
 
         $data->delete();

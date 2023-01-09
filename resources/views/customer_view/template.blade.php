@@ -75,9 +75,15 @@
                               <li class="nav-item {{ Request::is('contact-us') ? 'active' : '' }}">
                                  <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
                               </li>
+                              @if(Session::get('login'))
+                              <li class="nav-item {{ Request::is('logout') ? 'active' : '' }}">
+                                 <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
+                              </li>
+                              @else
                               <li class="nav-item {{ Request::is('login') ? 'active' : '' }}">
                                  <a class="nav-link" href="{{ url('/login') }}">Login</a>
                               </li>
+                              @endif
                            </ul>
                         </div>
                      </nav>
@@ -89,7 +95,6 @@
       @if(!Request::is('/'))
          echo '<div class="container my-5"><div class="row my-5"></div></div>';
       @endif
-      ?>
       @yield('main-content');
       <!-- end footer -->
       <!-- Javascript files-->

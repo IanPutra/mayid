@@ -12,7 +12,7 @@ class Admin extends Model
     public $timestamps = false;
     protected $primaryKey = 'admin_id';
 
-    protected $table = "customer";
+    protected $table = "admin";
     protected $fillable = [
         'username',
         'e_mail',

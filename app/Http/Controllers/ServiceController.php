@@ -8,6 +8,8 @@ use App\Models\Progress;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
+// tambahkan ke semua controller
+use Illuminate\Support\Facades\Session;
 
 class ServiceController extends Controller
 {
@@ -18,6 +20,10 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Service::get();
         return view('service.newservice',['data'=>$data]);
     }
@@ -29,6 +35,10 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         return view('service.create');
     }
 
@@ -40,6 +50,10 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $request->validate([
             'nameid' => 'required',
             'payment' => 'required|not_in:0',
@@ -83,7 +97,11 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/service');
     }
 
     /**
@@ -94,6 +112,10 @@ class ServiceController extends Controller
      */
     public function edit($service)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Service::find($service)->first();
         return view('service.edit',['service'=>$data]);
     }
@@ -107,6 +129,10 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $service)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Service::find($service);
 
         $request->validate([
@@ -131,6 +157,10 @@ class ServiceController extends Controller
      */
     public function destroy($service)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Service::find($service);
 
         $data->delete();
@@ -141,6 +171,10 @@ class ServiceController extends Controller
     // ini sama kaya edit()
     public function editprogress($id)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Service::find($id);
 
         return view('service.updateprogress',['data'=>$data]);
@@ -148,6 +182,10 @@ class ServiceController extends Controller
 
     public function detailprogress($id)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $service = Service::find($id);
         $progress = Progress::where('service_id','=',$id)->orderBy('time','DESC')->get();
         return view('service.detailprogress',['progress'=>$progress,'service'=>$service]);
@@ -156,6 +194,10 @@ class ServiceController extends Controller
     // ini sama kaya update
     public function updateprogress(Request $request)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $id = $request->serviceId;
 
         // variabel buat ambil jam skrg

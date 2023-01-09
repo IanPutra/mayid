@@ -6,6 +6,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+// tambahkan ke semua controller
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
@@ -16,6 +18,10 @@ class ProductController extends Controller
      */
     public function index()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Product::get();
         return view('product.index',['products'=>$data]);
     }
@@ -27,6 +33,10 @@ class ProductController extends Controller
      */
     public function create()
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         return view('product.create');
     }
 
@@ -38,6 +48,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         // validasi data
         $request->validate([
             'name' => 'required',
@@ -71,7 +85,11 @@ class ProductController extends Controller
      */
     public function show($product)
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return redirect('/dashboard/payment');
     }
 
     /**
@@ -82,6 +100,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Product::find($product)->first();
         return view('product.edit',['product'=>$data]);
     }
@@ -95,6 +117,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, $product)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Product::find($product)->first();
 
         // validasi data
@@ -128,6 +154,10 @@ class ProductController extends Controller
      */
     public function destroy($product)
     {
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
         $data = Product::find($product);
 
         $data->delete();
