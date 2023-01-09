@@ -33,6 +33,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('service/{id}/detail-progress', [ServiceController::class, 'detailprogress']);
     Route::post('service/update-progress', [ServiceController::class, 'updateprogress']);
     Route::post('service/pickup', [ServiceController::class, 'pickup']);
+    Route::post('sold/deliver', [SoldController::class, 'deliver']);
 });
 
 Route::prefix('ian')->group(function () {

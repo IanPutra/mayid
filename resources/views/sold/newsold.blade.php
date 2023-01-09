@@ -36,7 +36,6 @@
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Payment id</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product id</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Customer id</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                                 <th class="text-secondary opacity-7"></th>
                             </tr>
@@ -64,21 +63,21 @@
                                     <span class="text-secondary text-xs font-weight-bold">{{$datas->customer_id}}</span>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">{{$datas->price}}</span>
-                                </td>
-                                <td class="align-middle text-center">
-                                <span class="badge badge-sm bg-gradient-success">{{$datas->status}}</span>
+                                <span class="badge badge-sm bg-gradient-{{$datas->status == 'DELIVERED' ? 'success' : 'warning'}}">{{$datas->status}}</span>
                                 </td>
                                 <td class="align-middle text-center d-flex">
-                                            <a href="{{ url('/dashboard/sold/'.$datas->sold_id.'/detail-progress') }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-original-title="detail-progress">
-                                                <i class="fas fa-eye"></i>
-                                            </a>
                                             <a href="{{ url('/dashboard/sold/'.$datas->sold_id.'/edit') }}" class="btn btn-primary btn-sm ms-2" data-toggle="tooltip" data-original-title="Edit Admin">
                                                 <i class="fas fa-pencil"></i>
                                             </a>
-                                            <a href="{{ url('dashboard/sold/'.$datas->sold_id.'/progress') }}" class="btn btn-primary btn-sm ms-2">
-                                                UPDATE PROGRESS
-                                            </a>
+                                            <!-- cek kalo statusnya masih pending baru tambil tombol untuk deliver -->
+                                            @if($datas->status === 'PENDING')
+                                            <form action="{{ url('dashboard/sold/deliver') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="soldId" value="{{ $datas->sold_id }}">
+                                                <button class="btn btn-success ms-2 btn-sm" onclick="return confirm('Confirm deliver?');"><i class="fas fa-handshake"></i></button>
+                                            </form>
+                                            @endif
+
                                             <form action="{{ url('dashboard/sold/'.$datas->sold_id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')

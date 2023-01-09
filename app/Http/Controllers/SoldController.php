@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Sold;
 use App\Models\Payment;
+use App\Models\Customer;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreSoldRequest;
 use App\Http\Requests\UpdateSoldRequest;
@@ -28,7 +30,9 @@ class SoldController extends Controller
      */
     public function create()
     {
-        return view('sold.create');
+        $customers = Customer::get();
+        $products = Product::Get();
+        return view('sold.create',['customers'=>$customers,'products'=>$products]);
     }
 
     /**
@@ -40,10 +44,9 @@ class SoldController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'product'=>'required',
-            'price' => 'required',
-            'status' => 'required|not_in:0',
-            
+            'customer'=>'required|exists:customer,customer_id',
+            'product' => 'required|exists:product,product_id',
+            'payment' => 'required|not_in:0'
         ]);
 
         // variabel buat ambil jam skrg
@@ -51,22 +54,20 @@ class SoldController extends Controller
 
         // data dimasukin ke payment
         $datapayment = [
-            'method' => 'input',
+            'method' => $request->payment,
             'time' => $now,
             'payment_verification' => 'PAID',
-            'time_verif'=> $now
+            'time_verification'=> $now
         ];
 
         // store data payment
         $payment = Payment::create($datapayment);
 
         $data = [
-            'sold_id'=> $request->sold_id,
-            'payment_id'=> $request->payment_id,
+            'payment_id'=> $payment->payment_id,
             'product_id'=> $request->product,
-            'customer_id'=> $request->customer_id,
-            'price' => $request->price,
-            'status' => $request->status,
+            'customer_id'=> $request->customer,
+            'status' => 'PENDING',
         ];
 
         Sold::create($data);
@@ -118,5 +119,18 @@ class SoldController extends Controller
     public function destroy(Sold $sold)
     {
         //
+    }
+
+    public function deliver(Request $request)
+    {
+        // variabel buat ambil jam skrg
+        $now = now()->format('Y-m-d H:i:s');
+
+        $sold = Sold::find($request->soldId);
+        $sold->status = 'DELIVERED';
+        $sold->time_deliver = $now;
+        $sold->save();
+
+        return redirect('/dashboard/sold')->with('status','Product has been delivered!');
     }
 }

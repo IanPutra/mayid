@@ -17,7 +17,7 @@ class Sold extends Model
         'payment_id',
         'product_id',
         'customer_id',
-        'price',
         'status',
+        'time_deliver',
     ];
 }

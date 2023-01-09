@@ -25,32 +25,43 @@
                             <form action="{{ url('/dashboard/sold') }}" method="post">
                                 @csrf
 
+                                {{-- kolom nama customer --}}
+                                <label class="mt-2" for="customer">Customer</label>
+                                <select name="customer" id="customer" class="form-select">
+                                    <option value="">Select customer</option>
+                                    @foreach($customers as $customer)
+                                    <option value="{{ $customer->customer_id }}">{{ $customer->username }}</option>
+                                    @endforeach
+                                </select>
+                                @error('customer')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
                                 {{-- kolom nama product --}}
-                                <label class="mt-2" for="product">Product id</label>
-                                <input type="text" name="product" id="product" class="form-control @error('product') is-invalid @enderror" placeholder="product">
+                                <label class="mt-2" for="product">Product</label>
+                                <select name="product" id="product" class="form-select">
+                                    <option value="">Select product</option>
+                                    @foreach($products as $product)
+                                    <option value="{{ $product->product_id }}">{{ $product->name }}</option>
+                                    @endforeach
+                                </select>
                                 @error('product')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
 
-                                {{-- kolom price --}}
-                                <label class="mt-2" for="price">Price</label>
-                                <input type="text" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="price">
-                                @error('price')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-
-                                {{-- kolom status --}}
-                                <label class="mt-2" for="status">Status</label>
-                                <select name="status" id="status" class="form-select @error('status') is-invalid @enderror">
+                                {{-- kolom payment --}}
+                                <label class="mt-2" for="payment">Payment</label>
+                                <select name="payment" id="payment" class="form-select @error('payment') is-invalid @enderror">
                                     <option value="">Select type</option>
-                                    <option value="PENDING">PENDING</option>
-                                    <option value="PAID">PAID</option>
+                                    <option value="QRIS">QRIS</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="Mandiri">Mandiri</option>
                                 </select>
-                                @error('status')
+                                @error('payment')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
