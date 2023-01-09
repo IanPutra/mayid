@@ -57,7 +57,7 @@ class ServiceController extends Controller
             'payment_verification' => 'PENDING',
         ];
 
-        // store data
+        // store data payment
         $payment = Payment::create($datapayment);
 
         // data buat di store ke service

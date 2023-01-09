@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sold;
+use App\Models\Payment;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreSoldRequest;
 use App\Http\Requests\UpdateSoldRequest;
 
@@ -15,7 +17,8 @@ class SoldController extends Controller
      */
     public function index()
     {
-        //
+        $data = Sold::get();
+        return view('sold.newsold',['data'=>$data]);
     }
 
     /**
@@ -25,7 +28,7 @@ class SoldController extends Controller
      */
     public function create()
     {
-        //
+        return view('sold.create');
     }
 
     /**
@@ -34,9 +37,42 @@ class SoldController extends Controller
      * @param  \App\Http\Requests\StoreSoldRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSoldRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'product'=>'required',
+            'price' => 'required',
+            'status' => 'required|not_in:0',
+            
+        ]);
+
+        // variabel buat ambil jam skrg
+        $now = now()->format('Y-m-d H:i:s');
+
+        // data dimasukin ke payment
+        $datapayment = [
+            'method' => 'input',
+            'time' => $now,
+            'payment_verification' => 'PAID',
+            'time_verif'=> $now
+        ];
+
+        // store data payment
+        $payment = Payment::create($datapayment);
+
+        $data = [
+            'sold_id'=> $request->sold_id,
+            'payment_id'=> $request->payment_id,
+            'product_id'=> $request->product,
+            'customer_id'=> $request->customer_id,
+            'price' => $request->price,
+            'status' => $request->status,
+        ];
+
+        Sold::create($data);
+
+        return redirect('/dashboard/sold')->with('status','New data has been added');
+
     }
 
     /**

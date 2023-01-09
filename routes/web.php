@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SoldController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('/customer', CustomerController::class);
     Route::resource('/product', ProductController::class);
     Route::resource('/service', ServiceController::class);
+    Route::resource('/sold', SoldController::class);
     Route::get('service/{id}/progress', [ServiceController::class, 'editprogress']);
     Route::get('service/{id}/detail-progress', [ServiceController::class, 'detailprogress']);
     Route::post('service/update-progress', [ServiceController::class, 'updateprogress']);
