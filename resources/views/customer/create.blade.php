@@ -56,7 +56,7 @@
                                 {{-- kolom gender --}}
                                 <label class="mt-2" for="gender">Gender</label>
                                 <select name="gender" id="gender" class="form-select @error('gender') is-invalid @enderror">
-                                    <option value="">Select type</option>
+                                    <option value="">Select gender</option>
                                     <option value="M">Male</option>
                                     <option value="F">Female</option>
                                 </select>

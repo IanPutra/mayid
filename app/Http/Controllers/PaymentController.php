@@ -15,7 +15,8 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        $data = Payment::get();
+        return view('payment.index',['payment'=>$data]);
     }
 
     /**
