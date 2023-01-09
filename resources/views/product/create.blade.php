@@ -64,6 +64,15 @@
                                 </div>
                                 @enderror
 
+                                {{-- kolom amount --}}
+                                <label class="mt-2" for="amount">Amount</label>
+                                <input type="number" name="amount" id="amount" class="form-control @error('amount') is-invalid @enderror" placeholder="amount" value="@old('amount')">
+                                @error('amount')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                                
                                 {{-- tombol add data --}}
                                 <button class="btn btn-success mt-4">Add data</button>
                             </form>
