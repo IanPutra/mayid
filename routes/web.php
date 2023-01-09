@@ -29,7 +29,8 @@ Route::get('/', [CustomerView::class, 'index']);
 Route::get('/product', [CustomerView::class, 'product']);
 Route::get('/product-buy/{id}', [CustomerView::class, 'productbuy']);
 Route::get('/about', [CustomerView::class, 'about']);
-
+Route::get('/services', [CustomerView::class, 'services']);
+Route::get('/contact-us', [CustomerView::class, 'contactUs']);
 
 
 Route::prefix('dashboard')->group(function () {

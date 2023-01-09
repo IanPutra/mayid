@@ -32,7 +32,16 @@ class CustomerView extends Controller
     {
         return view('customer_view.about');
     }
+
+    public function contactUs()
+    {
+        return view('customer_view.contact');
+    }
     
+    public function services()
+    {
+        return view('customer_view.services');
+    }
 
 
 }

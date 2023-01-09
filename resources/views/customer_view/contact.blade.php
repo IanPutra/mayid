@@ -59,7 +59,7 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item">
-                                 <a class="nav-link" href="{{ url('/customer') }}">Home</a>
+                                 <a class="nav-link" href="{{ url('/') }}">Home</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ url('/about') }}">About</a>
@@ -71,7 +71,7 @@
                                  <a class="nav-link" href="{{ url('/product') }}">Product</a>
                               </li>
                               <li class="nav-item active">
-                                 <a class="nav-link" href="{{ url('/contact') }}">Contact Us</a>
+                                 <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
                               </li>
                               <li class="nav-item d_none">
                                  <a class="nav-link" href="#">Login</a>
