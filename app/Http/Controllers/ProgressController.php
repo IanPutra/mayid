@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Progress;
 use App\Http\Requests\StoreProgressRequest;
 use App\Http\Requests\UpdateProgressRequest;
+// tambahkan ke semua controller
+use Illuminate\Support\Facades\Session;
 
 class ProgressController extends Controller
 {

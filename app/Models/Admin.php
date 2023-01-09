@@ -19,5 +19,6 @@ class Admin extends Model
         'dateof_birth',
         'password',
         'gender',
+        'department'
     ];
 }

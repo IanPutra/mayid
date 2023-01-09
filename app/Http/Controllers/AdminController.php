@@ -78,7 +78,7 @@ class AdminController extends Controller
             'dateof_birth' => $request->umur,
             'password'=> $request->password,
             'gender' => $request->gender,
-            'department'=> $request->department,
+            'department' => $request->department,
         ];
 
         Admin::create($data);
