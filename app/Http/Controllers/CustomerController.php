@@ -59,6 +59,7 @@ class CustomerController extends Controller
             'e_mail' => 'required',
             'dateof_birth' => 'required',
             'gender' => 'required|not_in:0',
+            'address' => 'required',
             'password' => 'required',
         ]);
 
@@ -68,6 +69,7 @@ class CustomerController extends Controller
             'e_mail' => $request->e_mail,
             'dateof_birth' => $request->dateof_birth,
             'gender' => $request->gender,
+            'address' => $request->address,
             'password' => $request->password,
         ];
 
@@ -99,13 +101,13 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($customer)
     {
         // copy ini ke semua controller kecuali Auth dan CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Customer::find($customer)->first();
+        $data = Customer::find($customer);
         return view('customer.edit',['customer'=>$data]);
     }
 
@@ -122,7 +124,7 @@ class CustomerController extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Customer::find($customer)->first();
+        $data = Customer::find($customer);
 
         // validasi data
         $request->validate([
@@ -130,6 +132,7 @@ class CustomerController extends Controller
             'e_mail' => 'required',
             'dateof_birth' => 'required',
             'gender' => 'required|not_in:0',
+            'address' => 'required',
             'password' => 'required',
         ]);
 
@@ -138,6 +141,7 @@ class CustomerController extends Controller
         $data->e_mail = $request->e_mail;
         $data->dateof_birth = $request->dateof_birth;
         $data->gender = $request->gender;
+        $data->address = $request->address;
         $data->password = $request->password;
 
         // save data yang telah diupdate

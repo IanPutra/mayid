@@ -70,6 +70,15 @@
                                 </div>
                                 @enderror
 
+                                {{-- kolom address --}}
+                                <label class="mt-2" for="address">Address</label>
+                                <input type="address" name="address" id="address" class="form-control @error('address') is-invalid @enderror" placeholder="Customer address" value="{{ $customer->address }}">
+                                @error('address')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
                                 {{-- kolom password --}}
                                 <label class="mt-2" for="password">Password</label>
                                 <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="password" value="{{ $customer->password }}">

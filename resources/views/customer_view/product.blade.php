@@ -90,11 +90,11 @@
                         <div class="col mb-3 d-flex align-items-stretch">
                             <div class="card jarak d-block mx-auto " style="width: 18rem;">
                                 <div class="card-body">
-                                <h5 class="card-title">{{ $item->name }}</h5>
-                                <p class="card-text">{{ $item->type }}</p>                   
-                                <p class="card-text">{{ $item->description }}</p>   
-                                <p class="card-text">{{ $item->price }}</p> 
-                                <p class="card-text">{{ $item->amount }}</p>          
+                                <h3 class="card-title"><b>{{ $item->name }}</b></h3>
+                                <p class="card-text">Tipe: {{ $item->type }}</p>                   
+                                <p class="card-text">Deskripsi: {{ $item->description }}</p>   
+                                <p class="card-text">Harga: {{ $item->price }}</p> 
+                                <p class="card-text">Jumlah stok:{{ $item->amount }}</p>          
                                 <a href="/product-buy/{{ $item->product_id }}" class="btn btn-primary">Buy</a>
                               </div>
                             </div>                          

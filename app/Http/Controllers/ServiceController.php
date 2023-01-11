@@ -110,13 +110,13 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit($service)
     {
         // copy ini ke semua controller kecuali Auth dan CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Service::find($service)->first();
+        $data = Service::find($service);
         return view('service.edit',['service'=>$data]);
     }
 
@@ -133,7 +133,7 @@ class ServiceController extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Service::find($service)->first();
+        $data = Service::find($service);
 
         $request->validate([
             'device' => 'required',

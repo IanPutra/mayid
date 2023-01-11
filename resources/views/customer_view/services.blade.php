@@ -8,15 +8,29 @@
          <div class="container">
             <div class="row">
                <div class="col-md-7">
-                  <div class="laptop1_img">
+                  <div class="laptopservice">
                      <figure><img src="{{ url('/cus_asset/images/leptop.jpg') }}" alt="#"/></figure>
                   </div>
                </div>
                <div class="col-md-5">
                   <div class="titlepage">
                      <h2>laptop</h2>
-                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-                     <a class="read_more" href="#">Read More</a>
+                     <p>Do not be worry, we are here to fix your laptops!</p>
+                     <a class="read_more" href="#">Fix it now!</a>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="titlepage">
+                     <h2>PC</h2>
+                     <p>Lot of problems attacks your PC? Do not be worry we are here to help you!</p>
+                     <a class="read_more" href="#">Fix it now!</a>
+                  </div>
+               </div>
+               <div class="col-md-7">
+                  <div class="laptop1_img">
+                     <figure><img src="{{ url('/cus_asset/images/pct.png') }}" alt="#"/></figure>
                   </div>
                </div>
             </div>
