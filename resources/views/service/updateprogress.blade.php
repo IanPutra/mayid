@@ -27,7 +27,7 @@
                                 <input type="hidden" name="serviceId" value="{{ $data->service_id }}">
                                 <input type="hidden" name="adminId" value="2">
 
-                                {{-- kolom payment --}}
+                                {{-- kolom Progress --}}
                                 <label class="mt-2" for="progress">Progress</label>
                                 <select name="progress" id="progress" class="form-select @error('progress') is-invalid @enderror">
                                     <option value="">Select progress</option>

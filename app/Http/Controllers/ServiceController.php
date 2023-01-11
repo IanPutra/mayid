@@ -110,7 +110,7 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit($service)
+    public function edit(Service $service)
     {
         // copy ini ke semua controller kecuali Auth dan CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
@@ -133,7 +133,7 @@ class ServiceController extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Service::find($service);
+        $data = Service::find($service)->first();
 
         $request->validate([
             'device' => 'required',
@@ -230,7 +230,7 @@ class ServiceController extends Controller
             // sambil nabah ke tabel progress
             $progress = [
                 'service_id' => $request->serviceId,
-                'admin_id' => 2,
+                'admin_id' => Session::get('loginid'),
                 'time' => $now,
                 'detail' => $request->detail
             ];
