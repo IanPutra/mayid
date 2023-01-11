@@ -59,6 +59,7 @@ class CustomerController extends Controller
             'e_mail' => 'required',
             'dateof_birth' => 'required',
             'gender' => 'required|not_in:0',
+            'address' => 'required',
             'password' => 'required',
         ]);
 
@@ -68,6 +69,7 @@ class CustomerController extends Controller
             'e_mail' => $request->e_mail,
             'dateof_birth' => $request->dateof_birth,
             'gender' => $request->gender,
+            'address' => $request->address,
             'password' => $request->password,
         ];
 
@@ -130,6 +132,7 @@ class CustomerController extends Controller
             'e_mail' => 'required',
             'dateof_birth' => 'required',
             'gender' => 'required|not_in:0',
+            'address' => 'required',
             'password' => 'required',
         ]);
 
@@ -138,6 +141,7 @@ class CustomerController extends Controller
         $data->e_mail = $request->e_mail;
         $data->dateof_birth = $request->dateof_birth;
         $data->gender = $request->gender;
+        $data->address = $request->address;
         $data->password = $request->password;
 
         // save data yang telah diupdate

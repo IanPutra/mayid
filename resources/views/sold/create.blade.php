@@ -67,6 +67,9 @@
                                 </div>
                                 @enderror
 
+                                {{-- kolom alamat customer --}}
+                                
+                                
                                 {{-- tombol add data --}}
                                 <button class="btn btn-success mt-4">Add data</button>
                             </form>

@@ -42,6 +42,7 @@
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">E-mail</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of Birth</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gender</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Address</th>
                                 <th class="text-secondary opacity-7"></th>
                             </tr>
                         </thead>
@@ -66,6 +67,9 @@
                                 </td>
                                 <td class="align-middle text-center">
                                     <span class="text-secondary text-xs font-weight-bold">{{$cust->gender}}</span>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <span class="text-secondary text-xs font-weight-bold">{{$cust->address}}</span>
                                 </td>
                                 <td class="align-middle text-center d-flex">
                                     <a href="{{ url('/dashboard/customer/'.$cust->customer_id.'/edit') }}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-original-title="Edit customer">
