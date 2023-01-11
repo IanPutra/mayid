@@ -98,13 +98,13 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($product)
     {
         // copy ini ke semua controller kecuali Auth dan CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Product::find($product)->first();
+        $data = Product::find($product);
         return view('product.edit',['product'=>$data]);
     }
 
@@ -121,7 +121,7 @@ class ProductController extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Product::find($product)->first();
+        $data = Product::find($product);
 
         // validasi data
         $request->validate([

@@ -101,13 +101,13 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($customer)
     {
         // copy ini ke semua controller kecuali Auth dan CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Customer::find($customer)->first();
+        $data = Customer::find($customer);
         return view('customer.edit',['customer'=>$data]);
     }
 
@@ -124,7 +124,7 @@ class CustomerController extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Customer::find($customer)->first();
+        $data = Customer::find($customer);
 
         // validasi data
         $request->validate([

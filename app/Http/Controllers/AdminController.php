@@ -108,13 +108,13 @@ class AdminController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(admin $admin)
+    public function edit($admin)
     {
         // copy ini ke semua controller kecuali Auth dan CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Admin::find($admin)->first();
+        $data = Admin::find($admin);
         return view('admin.edit',['admin'=>$data]);
     }
 
@@ -131,7 +131,7 @@ class AdminController extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Admin::find($admin)->first();
+        $data = Admin::find($admin);
 
         $request->validate([
             'name' => 'required',
@@ -167,7 +167,7 @@ class AdminController extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        $data = Admin::find($admin)->first();
+        $data = Admin::find($admin);
 
         $data->delete();
         return redirect('/dashboard/admin')->with('status','Data '.$data->username.' has been removed');

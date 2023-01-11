@@ -29,7 +29,7 @@
 
                                 {{-- kolom nama --}}
                                 <label class="mt-2" for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Username" >
+                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Username" value="{{ $admin->username }}">
                                 @error('name')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -38,7 +38,7 @@
 
                                 {{-- kolom email --}}
                                 <label class="mt-2" for="email">E-mail</label>
-                                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="email" >
+                                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="email" value="{{ $admin->e_mail}}">
                                 @error('email')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -47,7 +47,7 @@
 
                                 {{-- kolom umur --}}
                                 <label class="mt-2" for="umur">Umur</label>
-                                <input type="date" name="umur" id="umur" class="form-control @error('umur') is-invalid @enderror" placeholder="Date of birth" value="@old('Date of birth')">
+                                <input type="date" name="umur" id="umur" class="form-control @error('umur') is-invalid @enderror" placeholder="Date of birth" value="{{ $admin->dateof_birth}}">
                                 @error('umur')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -69,7 +69,7 @@
 
                                 {{-- kolom password --}}
                                 <label class="mt-2" for="password">password</label>
-                                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="password" >
+                                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="password" value="{{ $admin->password}}">
                                 @error('password')
                                 <div class="invalid-feedback">
                                     {{ $message }}
