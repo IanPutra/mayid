@@ -132,7 +132,7 @@
       <!-- three_box -->
       <div class="three_box">
          <div class="container">
-            <div class="row">
+            <div class="row my-5">
                <div class="col-md-4">
                   <div class="box_text">
                      <i><img src="{{ url('/cus_asset/images/PCset.png') }}" alt="#" width="250px"/></i>
@@ -208,7 +208,7 @@
                                  <div class="row">
                                     <div class="col-md-9 mx-auto">
                                        <div class="test_box text-center mx-auto">
-                                          <i><img src="{{ url('/cus_asset/images/MAYID.png') }}" width="200dp" style="border-radius:150px;"</i>
+                                          <i><img src="{{ url('/cus_asset/images/MAYID.png') }}" width="200dp" style="border-radius:150px;"></i>
                                           <h4 class="text-center">Great To see us</h4>
                                           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, laudantium libero. Fugit nihil mollitia, odit magnam laborum quasi. Deserunt iure sequi officiis soluta aliquam atque modi inventore nam dolorum necessitatibus.</p>
                                        </div>
@@ -221,8 +221,8 @@
                            <div class="container">
                               <div class="carousel-caption">
                                  <div class="row">
-                                    <div class="col-md-9 ">
-                                       <div class="test_box">
+                                    <div class="col-md-12 ">
+                                       <div class="test_box text-center mx-auto">
                                           <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
                                           <h4 class="text-center">Ian Putra Ismaya</h4>
                                           <p class="text-center"> Full Stack Developer</p>
@@ -236,8 +236,8 @@
                            <div class="container">
                               <div class="carousel-caption">
                                  <div class="row">
-                                    <div class="col-md-9">
-                                       <div class="test_box">
+                                    <div class="col-md-12">
+                                       <div class="test_box text-center mx-auto">
                                           <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
                                           <h4 class="text-center">Adriel Stefanus</h4>
                                           <p class="text-center">UI/UX</p>
@@ -251,8 +251,8 @@
                            <div class="container">
                               <div class="carousel-caption">
                                  <div class="row">
-                                    <div class="col-md-9 ">
-                                       <div class="test_box">
+                                    <div class="col-md-12 ">
+                                       <div class="test_box text-center mx-auto">
                                           <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
                                           <h4 class="text-center">Diego Armando</h4>
                                           <p class="text-center">Front End Developer</p>
@@ -266,9 +266,9 @@
                            <div class="container">
                               <div class="carousel-caption">
                                  <div class="row">
-                                    <div class="col-md-9">
-                                       <div class="test_box">
-                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
+                                    <div class="col-md-12">
+                                       <div class="test_box text-center mx-auto">
+                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"></i>
                                           <h4 class="text-center">Marcel Weisang</h4>
                                           <p class="text-center">UI/UX</p>
                                        </div>
@@ -281,7 +281,7 @@
                            <div class="container">
                               <div class="carousel-caption">
                                  <div class="row">
-                                    <div class="col-md-9">
+                                    <div class="col-md-12">
                                        <div class="test_box text-center mx-auto">
                                           <i><img src="{{ url('/cus_asset/images/yosef.png') }}" width="200dp" style="border-radius:150px;"></i>
                                           <h4 class="text-center">Yosef Adventinus Agi Supriyanto</h4>
