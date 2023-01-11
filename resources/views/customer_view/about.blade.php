@@ -10,13 +10,13 @@
                <div class="col-md-5">
                   <div class="titlepage">
                      <h2>About Us</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                     <p>Web ini resmi dibuat oleh PT. MAYID yang akan dikembangkan sebagai tempat service Computer dan Laptop. Garansi terpercaya bisa anda dapatkan hanya dengan tidak merusak segel yang telah diberikan kepada customer. Bila ditemukan segel yang rusak tidak menjadi tanggung jawab kami.</p>
                      <a class="read_more" href="#">Read More</a>
                   </div>
                </div>
-               <div class="col-md-7">
-                  <div class="about_img">
-                     <figure><img src="{{ url('/cus_asset/images/about.jpg') }}" alt="#"/></figure>
+               <div class="col-md-5">
+                  <div class="about_img text-center mx-auto test_box">
+                     <i><img src="{{ url('/cus_asset/images/pcsetup.png') }}"  width="400dp" style="border-radius:200px;"/></i>
                   </div>
                </div>
             </div>

@@ -48,7 +48,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.blade.php"><img src="{{ url('/cus_asset/images/logo.png') }}" alt="#" /></a>
+                              <a href="index.blade.php"><img src="{{ url('/cus_asset/images/MAYID.png') }}" alt="#" width="100dp" style="border-radius:50px;"/></a>
                            </div>
                         </div>
                      </div>

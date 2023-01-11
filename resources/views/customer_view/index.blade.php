@@ -21,8 +21,8 @@
                            <div class="col-md-6">
                               <div class="text-bg">
                                  <span>Computer And Laptop</span>
-                                 <h1>Accessories</h1>
-                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
+                                 <h1>Services</h1>
+                                 <p>Customer trust is part of our responsibility. MAYID Computer & Laptop Services is a trusted website for you to find out the symptoms of illness from your Computer & Laptop.</p>
                                  <a href="#">Buy Now </a> <a href="contact.blade.php">Contact </a>
                               </div>
                            </div>
@@ -42,8 +42,8 @@
                            <div class="col-md-6">
                               <div class="text-bg">
                                  <span>Computer And Laptop</span>
-                                 <h1>Accessories</h1>
-                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
+                                 <h1>Services</h1>
+                                 <p>If you need a spare part, you can buy it right away or maybe you want to upgrade your PC, you can order it right away and also buy it by pre-order.</p>
                                  <a href="#">Buy Now </a> <a href="contact.blade.php">Contact </a>
                               </div>
                            </div>
@@ -135,107 +135,29 @@
             <div class="row">
                <div class="col-md-4">
                   <div class="box_text">
-                     <i><img src="{{ url('/cus_asset/images/thr.png') }}" alt="#"/></i>
-                     <h3>Computer</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                     <i><img src="{{ url('/cus_asset/images/PCset.png') }}" alt="#" width="250px"/></i>
+                     <h3>PC</h3>
+                     <p>CPU is an important component of your computer. Immediately build your CPU set through us quickly and reliably.</p>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="box_text">
-                     <i><img src="{{ url('/cus_asset/images/thr1.png') }}" alt="#"/></i>
+                     <i><img src="{{ url('/cus_asset/images/Macbook.png') }}" alt="#" width="1000px"/></i>
                      <h3>Laptop</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                     <p>Feeling less fast with your laptop's performance? Maybe the service will really help you in finding diseases in your laptop.</p>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="box_text">
-                     <i><img src="{{ url('/cus_asset/images/thr2.png') }}" alt="#"/></i>
-                     <h3>Tablet</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                     <i><img src="{{ url('/cus_asset/images/sparepart.png') }}" alt="#" width="250px"/></i>
+                     <h3>Spare Part</h3>
+                     <p>Performance when playing less tight? it's time to upgrade your VGA to the latest model so you can feel the gaming sensation smoothly.</p>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- three_box -->
-      <!-- products -->
-      <div  class="products">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Our Products</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="our_products">
-                     <div class="row">
-                        <div class="col-md-4 margin_bottom1">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product1.png') }}" alt="#"/></figure>
-                              <h3>Computer</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-4 margin_bottom1">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product2.png') }}" alt="#"/></figure>
-                              <h3>Laptop</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-4 margin_bottom1">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product3.png') }}" alt="#"/></figure>
-                              <h3>Tablet</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-4 margin_bottom1">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product4.png') }}" alt="#"/></figure>
-                              <h3>Speakers</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-4 margin_bottom1">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product5.png') }}" alt="#"/></figure>
-                              <h3>internet</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-4 margin_bottom1">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product6.png') }}" alt="#"/></figure>
-                              <h3>Hardisk</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-4">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product7.png') }}" alt="#"/></figure>
-                              <h3>Rams</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-4">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product8.png') }}" alt="#"/></figure>
-                              <h3>Bettery</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-4">
-                           <div class="product_box">
-                              <figure><img src="{{ url('/cus_asset/images/product9.png') }}" alt="#"/></figure>
-                              <h3>Drive</h3>
-                           </div>
-                        </div>
-                        <div class="col-md-12">
-                           <a class="read_more" href="#">See More</a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end products -->
+      
       <!-- laptop  section -->
       <div class="laptop">
          <div class="container">
@@ -257,13 +179,14 @@
       </div>
       </div>
       <!-- end laptop  section -->
+
       <!-- customer -->
       <div class="customer">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Customer Review</h2>
+                     <h2>Our Teams</h2>
                   </div>
                </div>
             </div>
@@ -274,17 +197,20 @@
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                        <li data-target="#myCarousel" data-slide-to="4"></li>
+                        <li data-target="#myCarousel" data-slide-to="5"></li>
                      </ol>
                      <div class="carousel-inner">
                         <div class="carousel-item active">
                            <div class="container">
                               <div class="carousel-caption ">
                                  <div class="row">
-                                    <div class="col-md-9 offset-md-3">
-                                       <div class="test_box">
-                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
-                                          <h4>Sandy Miller</h4>
-                                          <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id</p>
+                                    <div class="col-md-9 mx-auto">
+                                       <div class="test_box text-center mx-auto">
+                                          <i><img src="{{ url('/cus_asset/images/MAYID.png') }}" width="200dp" style="border-radius:150px;"</i>
+                                          <h4 class="text-center">Great To see us</h4>
+                                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, laudantium libero. Fugit nihil mollitia, odit magnam laborum quasi. Deserunt iure sequi officiis soluta aliquam atque modi inventore nam dolorum necessitatibus.</p>
                                        </div>
                                     </div>
                                  </div>
@@ -295,11 +221,11 @@
                            <div class="container">
                               <div class="carousel-caption">
                                  <div class="row">
-                                    <div class="col-md-9 offset-md-3">
+                                    <div class="col-md-9 ">
                                        <div class="test_box">
                                           <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
-                                          <h4>Sandy Miller</h4>
-                                          <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id</p>
+                                          <h4 class="text-center">Ian Putra Ismaya</h4>
+                                          <p class="text-center"> Full Stack Developer</p>
                                        </div>
                                     </div>
                                  </div>
@@ -310,11 +236,56 @@
                            <div class="container">
                               <div class="carousel-caption">
                                  <div class="row">
-                                    <div class="col-md-9 offset-md-3">
+                                    <div class="col-md-9">
                                        <div class="test_box">
                                           <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
-                                          <h4>Sandy Miller</h4>
-                                          <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id</p>
+                                          <h4 class="text-center">Adriel Stefanus</h4>
+                                          <p class="text-center">UI/UX</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-9 ">
+                                       <div class="test_box">
+                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
+                                          <h4 class="text-center">Diego Armando</h4>
+                                          <p class="text-center">Front End Developer</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-9">
+                                       <div class="test_box">
+                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
+                                          <h4 class="text-center">Marcel Weisang</h4>
+                                          <p class="text-center">UI/UX</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption">
+                                 <div class="row">
+                                    <div class="col-md-9">
+                                       <div class="test_box text-center mx-auto">
+                                          <i><img src="{{ url('/cus_asset/images/yosef.png') }}" width="200dp" style="border-radius:150px;"></i>
+                                          <h4 class="text-center">Yosef Adventinus Agi Supriyanto</h4>
+                                          <p class="text-center">Full Stack Developer</p>
                                        </div>
                                     </div>
                                  </div>
