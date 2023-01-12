@@ -23,7 +23,11 @@ class CustomerViewService extends Controller
      */
     public function create()
     {
-        //
+        // copy ini ke semua controller kecuali Auth dan CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
+            return redirect('/login/admin');
+        }
+        return view('service.create');
     }
 
     /**
