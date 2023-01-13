@@ -55,6 +55,7 @@ class ProductController extends Controller
         // validasi data
         $request->validate([
             'name' => 'required',
+            'image' => 'image',
             'type' => 'required|not_in:0',
             'description' => 'required',
             'price' => 'required|gt:0',
@@ -64,6 +65,7 @@ class ProductController extends Controller
         // memasukkan data dari form ke variabel array
         $data = [
             'name' => $request->name,
+            'image' => $request->image,
             'type' => $request->type,
             'description' => $request->description,
             'price' => $request->price,

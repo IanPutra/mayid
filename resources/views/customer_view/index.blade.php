@@ -23,7 +23,7 @@
                                  <span>Computer And Laptop</span>
                                  <h1>Services</h1>
                                  <p>Customer trust is part of our responsibility. MAYID Computer & Laptop Services is a trusted website for you to find out the symptoms of illness from your Computer & Laptop.</p>
-                                 <a href="#">Buy Now </a> <a href="contact.blade.php">Contact </a>
+                                 <a href="{{ url('/product') }}">Buy Now </a> <a href="{{ url('/contact-us') }}">Contact </a>
                               </div>
                            </div>
                            <div class="col-md-6">

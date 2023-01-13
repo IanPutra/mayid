@@ -39,6 +39,7 @@
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">ID</th>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Photo</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
@@ -61,6 +62,9 @@
                                                     <h6 class="mb-0 text-sm">{{ $product->name }}</h6>
                                                 </div>
                                             </div>
+                                        </td>
+                                        <td class="text-center align-middle text-sm">
+                                            <span class="badge badge-sm bg-gradient-success">{{ $product->image }}</span>
                                         </td>
                                         <td class="text-center align-middle text-sm">
                                             <span class="badge badge-sm bg-gradient-success">{{ $product->type }}</span>

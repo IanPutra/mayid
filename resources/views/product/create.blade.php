@@ -33,6 +33,15 @@
                                 </div>
                                 @enderror
 
+                                {{-- kolom image --}}
+                                <label class="mt-2" for="image">Image</label>
+                                <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Product image" >
+                                @error('image')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
                                 {{-- kolom type --}}
                                 <label class="mt-2" for="type">Type</label>
                                 <select name="type" id="type" class="form-select @error('type') is-invalid @enderror">

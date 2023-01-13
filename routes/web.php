@@ -58,6 +58,8 @@ Route::prefix('dashboard')->group(function () {
     Route::post('service/update-progress', [ServiceController::class, 'updateprogress']);
     Route::post('service/pickup', [ServiceController::class, 'pickup']);
     Route::post('sold/deliver', [SoldController::class, 'deliver']);
+    Route::get('/upload', 'UploadController@upload');
+    Route::post('/upload/proses', 'UploadController@proses_upload');
 });
 
 Route::prefix('ian')->group(function () {
