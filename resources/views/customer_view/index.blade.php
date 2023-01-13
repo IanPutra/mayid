@@ -158,27 +158,6 @@
          </div>
       </div>
       
-      <!-- laptop  section -->
-      <div class="laptop">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="titlepage">
-                     <p>Every Computer and laptop</p>
-                     <h2>Up to 40% off !</h2>
-                     <a class="read_more" href="#">Shop Now</a>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="laptop_box">
-                     <figure><img src="{{ url('/cus_asset/images/pc.png') }}" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      </div>
-      <!-- end laptop  section -->
 
       <!-- customer -->
       <div class="customer">
@@ -210,7 +189,7 @@
                                        <div class="test_box text-center mx-auto">
                                           <i><img src="{{ url('/cus_asset/images/MAYID.png') }}" width="200dp" style="border-radius:150px;"></i>
                                           <h4 class="text-center">Great To see us</h4>
-                                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, laudantium libero. Fugit nihil mollitia, odit magnam laborum quasi. Deserunt iure sequi officiis soluta aliquam atque modi inventore nam dolorum necessitatibus.</p>
+                                          <p>Here are the people who developed this website to become a website that will help you find spare parts and diseases on your computer & laptop.</p>
                                        </div>
                                     </div>
                                  </div>
@@ -223,7 +202,7 @@
                                  <div class="row">
                                     <div class="col-md-12 ">
                                        <div class="test_box text-center mx-auto">
-                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
+                                          <i><img src="{{ url('/cus_asset/images/ian.png') }}" alt="#" width="200dp" style="border-radius:150px;"/></i>
                                           <h4 class="text-center">Ian Putra Ismaya</h4>
                                           <p class="text-center"> Full Stack Developer</p>
                                        </div>
@@ -238,8 +217,8 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box text-center mx-auto">
-                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
-                                          <h4 class="text-center">Adriel Stefanus</h4>
+                                          <i><img src="{{ url('/cus_asset/images/adriel.png') }}" alt="#" width="200dp" style="border-radius:150px;"/></i>
+                                          <h4 class="text-center">Adriel Stefanus Anderson</h4>
                                           <p class="text-center">UI/UX</p>
                                        </div>
                                     </div>
@@ -253,7 +232,7 @@
                                  <div class="row">
                                     <div class="col-md-12 ">
                                        <div class="test_box text-center mx-auto">
-                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"/></i>
+                                          <i><img src="{{ url('/cus_asset/images/diego.png') }}" alt="#" width="200dp" style="border-radius:150px;"/></i>
                                           <h4 class="text-center">Diego Armando</h4>
                                           <p class="text-center">Front End Developer</p>
                                        </div>
@@ -268,7 +247,7 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box text-center mx-auto">
-                                          <i><img src="{{ url('/cus_asset/images/cos.png') }}" alt="#"></i>
+                                          <i><img src="{{ url('/cus_asset/images/weisang.png') }}" alt="#" width="200dp" style="border-radius:150px;"></i>
                                           <h4 class="text-center">Marcel Weisang</h4>
                                           <p class="text-center">UI/UX</p>
                                        </div>
@@ -307,42 +286,5 @@
          </div>
       </div>
       <!-- end customer -->
-
-      <!--  contact -->
-      <div class="contact">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Contact Now</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-10 offset-md-1">
-                  <form id="request" class="main_form">
-                     <div class="row">
-                        <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Name" type="type" name="Name"> 
-                        </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Email" type="type" name="Email"> 
-                        </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
-                        </div>
-                        <div class="col-md-12">
-                           <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message </textarea>
-                        </div>
-                        <div class="col-md-12">
-                           <button class="send_btn">Send</button>
-                        </div>
-                     </div>
-                  </form>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end contact -->
       <!--  footer -->
 @endsection

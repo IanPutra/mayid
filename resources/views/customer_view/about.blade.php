@@ -10,8 +10,8 @@
                <div class="col-md-6">
                   <div class="titlepage">
                      <h2>About Us</h2>
-                     <p>Web ini resmi dibuat oleh PT. MAYID yang akan dikembangkan sebagai tempat service Computer dan Laptop. Garansi terpercaya bisa anda dapatkan hanya dengan tidak merusak segel yang telah diberikan kepada customer. Bila ditemukan segel yang rusak tidak menjadi tanggung jawab kami.</p>
-                     <a class="read_more" href="#">Read More</a>
+                     <p>This website is officially made by PT. MAYID which will be developed as a place to service computers and laptops. You can get a reliable guarantee only by not breaking the seal that has been given to the customer. If a damaged seal is found, we are not responsible.</p>
+                     <a class="read_more" class="nav-link" href="{{ url('/product') }}">Check Product</a>
                   </div>
                </div>
                <div class="col-md-6">
