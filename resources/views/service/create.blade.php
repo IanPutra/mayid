@@ -12,9 +12,6 @@
 
 <!-- isinya -->
 @section('main-content')
-<<<<<<< HEAD
-
-=======
 <section class="mb-4">
     <div class="container">
         <div class="row">
@@ -87,5 +84,4 @@
         </div>
     </div>
 </section>
->>>>>>> 3e8c5115089fa2fca27f7f81501bed7eefdc93f5
 @endsection
