@@ -12,11 +12,20 @@
                     <div class="card-body">
                         <div class="col-lg-auto">
                             <form action="{{ url('/dashboard/service') }}" method="post">
-                                @csrf
-                                {{-- kolom nama --}}
-                                <label class="mt-2" for="nameid">Customer Id</label>
-                                <input type="text" name="nameid" id="nameid" class="form-control @error('nameid') is-invalid @enderror" placeholder="name id" value="{{$data}}">
-                                @error('nameid')
+                                
+                                {{-- kolom device --}}
+                                <label class="mt-2" for="device">Device Name</label>
+                                <input type='text' textarea name="device" class="form-control @error('device') is-invalid @enderror" id="device" placeholder="device""></input>
+                                @error('device')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
+                                {{-- kolom deskripsi --}}
+                                <label class="mt-2" for="description">Description</label>
+                                <textarea name="description" class="form-control @error('type') is-invalid @enderror" id="description" rows="3" placeholder="Product description" value="@old('description')"></textarea>
+                                @error('description')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -31,33 +40,6 @@
                                     <option value="Mandiri">Mandiri</option>
                                 </select>
                                 @error('payment')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-
-                                {{-- kolom device --}}
-                                <label class="mt-2" for="device">Device Name</label>
-                                <input type='text' textarea name="device" class="form-control @error('device') is-invalid @enderror" id="device" placeholder="device""></input>
-                                @error('device')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-
-                                {{-- kolom deskripsi --}}
-                                <label class="mt-2" for="description">Description</label>
-                                <input type="number" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="description" >
-                                @error('description')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-
-                                {{-- kolom price --}}
-                                <label class="mt-2" for="price">Price</label>
-                                <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="price" >
-                                @error('price')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

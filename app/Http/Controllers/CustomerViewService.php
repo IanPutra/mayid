@@ -38,6 +38,7 @@ class CustomerViewService extends Controller
             return redirect('/login/customer');
         }
         $data = Service::where('customer_id','=',Session::get('loginid'))->get();
+        return view('customer_view.createservice',['data'=>$data]);
     }
 
     /**
@@ -54,7 +55,6 @@ class CustomerViewService extends Controller
         }
 
         $request->validate([
-            'nameid' => 'required',
             'payment' => 'required|not_in:0',
             'device' => 'required',
         ]);
@@ -74,7 +74,7 @@ class CustomerViewService extends Controller
 
         // data buat di store ke service
         $data = [
-            'customer_id' => $request->nameid,
+            'customer_id' => $request->loginid,
             'payment_id' => $payment->payment_id,
             'device_name' => $request->device,
             'service_start_time' => $now,
