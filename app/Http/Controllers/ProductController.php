@@ -8,6 +8,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 // tambahkan ke semua controller
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -55,17 +56,23 @@ class ProductController extends Controller
         // validasi data
         $request->validate([
             'name' => 'required',
-            'image' => 'image',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
             'type' => 'required|not_in:0',
             'description' => 'required',
             'price' => 'required|gt:0',
             'amount' => 'required|gt:0',
         ]);
 
+        // upload image
+        $image = $request->file('image');
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+
+        $image->move(public_path('/assets/product-image'),$imageName);
+
         // memasukkan data dari form ke variabel array
         $data = [
             'name' => $request->name,
-            'image' => $request->image,
+            'image' => $imageName,
             'type' => $request->type,
             'description' => $request->description,
             'price' => $request->price,
@@ -128,15 +135,27 @@ class ProductController extends Controller
         // validasi data
         $request->validate([
             'name' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
             'type' => 'required|not_in:0',
             'description' => 'required',
             'price' => 'required|gt:0',
-            'amount' => 'required|gt:0'
+            'amount' => 'required|gt:0',
         ]);
+
+        // hapus gambar lama
+        $path = 'assets/product-image/' . $data->image;
+        $delete = Storage::disk('public')->delete($path);
+
+        // upload image
+        $image = $request->file('image');
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+
+        $image->move(public_path('/assets/product-image'),$imageName);
 
         // update data
         $data->name = $request->name;
         $data->type = $request->type;
+        $data->image = $imageName;
         $data->description = $request->description;
         $data->price = $request->price;
         $data->amount = $request->amount;
@@ -161,6 +180,12 @@ class ProductController extends Controller
             return redirect('/login/admin');
         }
         $data = Product::find($product);
+        // hapus gambar lama
+        $path = 'assets/product-image/'. $data->image;
+        $delete = Storage::disk('public')->delete($path);
+
+        echo('<image src="'.$path.'"></image>');
+        die;
 
         $data->delete();
         return redirect('/dashboard/product')->with('status','Data '.$data->name.' has been removed');

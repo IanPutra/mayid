@@ -22,11 +22,11 @@
                     </div>
                     <div class="card-body">
                         <div class="col-lg-6">
-                            <form action="{{ url('/dashboard/product') }}" method="post">
+                            <form action="{{ url('/dashboard/product') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 {{-- kolom nama --}}
                                 <label class="mt-2" for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Product name" >
+                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Product name" value="{{@old('name')}}">
                                 @error('name')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -57,7 +57,7 @@
 
                                 {{-- kolom desc --}}
                                 <label class="mt-2" for="description">Description</label>
-                                <textarea name="description" class="form-control @error('type') is-invalid @enderror" id="description" rows="3" placeholder="Product description" value="@old('description')"></textarea>
+                                <textarea name="description" class="form-control @error('type') is-invalid @enderror" id="description" rows="3" placeholder="Product description" value="@old('description')">{{@old('description')}}</textarea>
                                 @error('description')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -66,7 +66,7 @@
 
                                 {{-- kolom harga --}}
                                 <label class="mt-2" for="price">Price</label>
-                                <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Price" value="@old('price')">
+                                <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="Price" value="{{ @old('price') }}">
                                 @error('price')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -75,7 +75,7 @@
 
                                 {{-- kolom amount --}}
                                 <label class="mt-2" for="amount">Amount</label>
-                                <input type="number" name="amount" id="amount" class="form-control @error('amount') is-invalid @enderror" placeholder="amount" value="@old('amount')">
+                                <input type="number" name="amount" id="amount" class="form-control @error('amount') is-invalid @enderror" placeholder="amount" value="{{ @old('amount') }}">
                                 @error('amount')
                                 <div class="invalid-feedback">
                                     {{ $message }}

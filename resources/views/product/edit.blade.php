@@ -22,7 +22,7 @@
                     </div>
                     <div class="card-body">
                         <div class="col-lg-6">
-                            <form action="{{ url('/dashboard/product/'.$product->product_id) }}" method="post">
+                            <form action="{{ url('/dashboard/product/'.$product->product_id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PATCH')
                                 <input type="hidden" name="id" value="{{ $product->product_id }}">
@@ -30,6 +30,15 @@
                                 <label class="mt-2" for="name">Name</label>
                                 <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Product name" value="{{ $product->name }}">
                                 @error('name')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
+                                {{-- kolom image --}}
+                                <label class="mt-2" for="image">Image</label>
+                                <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror" placeholder="Product image" >
+                                @error('image')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
