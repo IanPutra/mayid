@@ -34,6 +34,7 @@ Route::get('/about', [CustomerView::class, 'about']);
 Route::get('/services', [CustomerView::class, 'services']);
 Route::get('/contact-us', [CustomerView::class, 'contactUs']);
 Route::get('/bookservice', [CustomerViewService::class, 'index']);
+Route::get('/servicenow', [CustomerViewService::class, 'create']);
 
 Route::get('/login', [Auth::class, 'index']);
 Route::get('/login/admin', [Auth::class, 'admin']);
