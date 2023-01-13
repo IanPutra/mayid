@@ -13,6 +13,7 @@ use App\Http\Controllers\SoldController;
 use App\Http\Controllers\CustomerView;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CustomerViewService;
+use App\Http\Controllers\CustomerViewProgress;
 use App\Http\Controllers\Auth;
 
 /*
@@ -35,6 +36,7 @@ Route::get('/services', [CustomerView::class, 'services']);
 Route::get('/contact-us', [CustomerView::class, 'contactUs']);
 Route::get('/bookservice', [CustomerViewService::class, 'index']);
 Route::get('/servicenow', [CustomerViewService::class, 'create']);
+Route::get('/progressdetail', [CustomerViewService::class, 'index']);
 
 Route::get('/login', [Auth::class, 'index']);
 Route::get('/login/admin', [Auth::class, 'admin']);

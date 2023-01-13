@@ -23,7 +23,7 @@ class CustomerViewProgress extends Controller
             return redirect('/login/customer');
         }
         $data = Service::where('customer_id','=',Session::get('loginid'))->get();
-        return view('customer_view.bookservice',['data'=>$data]);
+        return view('customer_view.serviceprogress',['data'=>$data]);
     }
 
     /**
