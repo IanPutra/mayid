@@ -56,6 +56,15 @@
                                 </div>
                                 @enderror
 
+                                {{-- kolom deskripsi --}}
+                                <label class="mt-2" for="description">Description</label>
+                                <input type="number" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="description" >
+                                @error('description')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+
                                 {{-- kolom price --}}
                                 <label class="mt-2" for="price">Price</label>
                                 <input type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="price" >

@@ -91,6 +91,7 @@
                             <div class="card jarak d-block mx-auto " style="width: 18rem;">
                                 <div class="card-body">
                                 <h3 class="card-title"><b>{{ $item->name }}</b></h3>
+                                <img>{{ $item->image }}</img>
                                 <p class="card-text">Tipe: {{ $item->type }}</p>                   
                                 <p class="card-text">Deskripsi: {{ $item->description }}</p>   
                                 <p class="card-text">Harga: {{ $item->price }}</p> 
