@@ -37,7 +37,7 @@ Route::get('/contact-us', [CustomerView::class, 'contactUs']);
 Route::get('/bookservice', [CustomerViewService::class, 'index']);
 Route::get('/servicenow', [CustomerViewService::class, 'create']);
 Route::post('/servicenow', [CustomerViewService::class, 'store']);
-Route::get('/progressdetail', [CustomerViewService::class, 'index']);
+Route::get('/progressdetail/{id}', [CustomerViewService::class, 'detailProgress']);
 
 Route::get('/login', [Auth::class, 'index']);
 Route::get('/login/admin', [Auth::class, 'admin']);

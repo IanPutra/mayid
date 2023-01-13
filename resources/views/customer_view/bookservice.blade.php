@@ -57,7 +57,7 @@
                                 <span class="text-secondary text-xs font-weight-bold">{{$datas->price}}</span>
                                 </td>
                                 <td class="align-middle text-center d-flex">
-                                    <a href="{{ url('/dashboard/service/'.$datas->service_id.'/detail-progress') }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-original-title="detail-progress">
+                                    <a href="{{ url('/progressdetail/'.$datas->service_id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-original-title="detail-progress">
                                         <i class="btn">Progress</i>
                                     <!-- cek kalo udh ada waktu pick up dan pick up time masih kosong maka tampilin tombolnya -->
                                     @if($datas->service_end_time !== NULL && $datas->device_pickup_time === NULL )

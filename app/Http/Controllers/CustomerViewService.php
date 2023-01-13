@@ -26,6 +26,16 @@ class CustomerViewService extends Controller
         return view('customer_view.bookservice',['data'=>$data]);
     }
 
+    public function detailProgress($id)
+    {
+        if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
+            return redirect('/login/customer');
+        }
+        $service = Service::find($id);
+        $progress = Progress::where('service_id','=',$id)->orderBy('time','DESC')->get();
+        return view('customer_view.serviceprogress',['progress'=>$progress,'service'=>$service]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

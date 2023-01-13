@@ -2,23 +2,23 @@
 
 @section('main-content')
 @section('main-content')
-<section class="mb-4">
+<section class="mb-4 py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Detail Service</h6>
+                        <h1>Detail Service</h1>
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-6">
                                 <h1><b>{{ $service->device_name }}</b></h1>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-12">
-                                <h4>Progress:</h4>
+                                <h1>Progress:</h1>
                                 <ul>
                                     @foreach($progress as $prog)
                                     <li>
