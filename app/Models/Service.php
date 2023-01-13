@@ -17,11 +17,11 @@ class Service extends Model
         'customer_id',
         'payment_id',
         'device_name',
+        'deskripsi',
         'service_start_time',
         'service_status',
         'service_end_time',
         'device_pickup_time',
-        'price',
-        'description',
+        'price'
     ];
 }

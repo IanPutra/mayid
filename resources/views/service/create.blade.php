@@ -26,7 +26,7 @@
                                 @csrf
                                 {{-- kolom nama --}}
                                 <label class="mt-2" for="nameid">Customer Id</label>
-                                <input type="text" name="nameid" id="nameid" class="form-control @error('nameid') is-invalid @enderror" placeholder="name id" >
+                                <input type="text" name="nameid" id="nameid" class="form-control @error('nameid') is-invalid @enderror" placeholder="customer id" >
                                 @error('nameid')
                                 <div class="invalid-feedback">
                                     {{ $message }}
