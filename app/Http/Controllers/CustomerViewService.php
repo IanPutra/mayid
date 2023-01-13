@@ -57,6 +57,7 @@ class CustomerViewService extends Controller
         $request->validate([
             'payment' => 'required|not_in:0',
             'device' => 'required',
+            'description' => 'required'
         ]);
 
         // variabel buat ambil jam skrg
@@ -74,9 +75,10 @@ class CustomerViewService extends Controller
 
         // data buat di store ke service
         $data = [
-            'customer_id' => $request->loginid,
+            'customer_id' => Session::get('loginid'),
             'payment_id' => $payment->payment_id,
             'device_name' => $request->device,
+            'deskripsi' => $request->description,
             'service_start_time' => $now,
             'service_status' => 'ACCEPTED',
             'price' => 0,
@@ -84,7 +86,7 @@ class CustomerViewService extends Controller
 
         Service::create($data);
 
-        return redirect('/customer_view/bookservice')->with('status','New data has been added');
+        return redirect('/bookservice')->with('status','New data has been added');
     }
 
     /**

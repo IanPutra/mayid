@@ -11,8 +11,8 @@
                     </div>
                     <div class="card-body">
                         <div class="col-lg-auto">
-                            <form action="{{ url('/dashboard/service') }}" method="post">
-                                
+                            <form action="{{ url('/servicenow') }}" method="post">
+                                @csrf
                                 {{-- kolom device --}}
                                 <label class="mt-2" for="device">Device Name</label>
                                 <input type='text' textarea name="device" class="form-control @error('device') is-invalid @enderror" id="device" placeholder="device""></input>

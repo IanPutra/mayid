@@ -12,7 +12,7 @@
                                 <h1>Service Table</h1>
                             </div>
                             <div class="col-lg-auto ms-12">
-                                <a href="{{ url('/servicenow') }}" class="btn btn-success">Service Now!</a>
+                                <a href="{{ url('/servicenow') }}" class="btn btn-success">Service Now</a>
                             </div>
                         </div>
                     </div>
