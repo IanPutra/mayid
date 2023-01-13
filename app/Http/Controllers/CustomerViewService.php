@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
+use App\Models\Payment;
+use App\Models\Progress;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreServiceRequest;
+use App\Http\Requests\UpdateServiceRequest;
+// tambahkan ke semua controller
+use Illuminate\Support\Facades\Session;
 
 class CustomerViewService extends Controller
 {
@@ -23,11 +30,11 @@ class CustomerViewService extends Controller
      */
     public function create()
     {
-        // copy ini ke semua controller kecuali Auth dan CostumerView
-        if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
-            return redirect('/login/admin');
+        // copy ini ke semua controller CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
+            return redirect('/login/customer');
         }
-        return view('service.create');
+        return view('bookservice.create');
     }
 
     /**
@@ -38,7 +45,43 @@ class CustomerViewService extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // copy ini ke semua controller CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
+            return redirect('/login/customer');
+        }
+
+        $request->validate([
+            'nameid' => 'required',
+            'payment' => 'required|not_in:0',
+            'device' => 'required',
+        ]);
+
+        // variabel buat ambil jam skrg
+        $now = now()->format('Y-m-d H:i:s');
+
+        // data dimasukin ke payment
+        $datapayment = [
+            'method' => $request->payment,
+            'time' => $now,
+            'payment_verification' => 'PENDING',
+        ];
+
+        // store data payment
+        $payment = Payment::create($datapayment);
+
+        // data buat di store ke service
+        $data = [
+            'customer_id' => $request->nameid,
+            'payment_id' => $payment->payment_id,
+            'device_name' => $request->device,
+            'service_start_time' => $now,
+            'service_status' => 'ACCEPTED',
+            'price' => 0,
+        ];
+
+        Service::create($data);
+
+        return redirect('/customer_view/bookservice')->with('status','New data has been added');
     }
 
     /**
@@ -47,9 +90,13 @@ class CustomerViewService extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Service $service)
     {
-        //
+        // copy ini ke semua controller CostumerView
+        if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
+            return redirect('/login/customer');
+        }
+        return view('bookservice.create');
     }
 
     /**
