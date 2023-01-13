@@ -22,5 +22,6 @@ class Service extends Model
         'service_end_time',
         'device_pickup_time',
         'price',
+        'description',
     ];
 }

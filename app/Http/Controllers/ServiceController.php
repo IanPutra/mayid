@@ -58,7 +58,8 @@ class ServiceController extends Controller
             'nameid' => 'required',
             'payment' => 'required|not_in:0',
             'device' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'description' => 'required'
         ]);
 
         // variabel buat ambil jam skrg
@@ -79,6 +80,7 @@ class ServiceController extends Controller
             'customer_id' => $request->nameid,
             'payment_id' => $payment->payment_id,
             'device_name' => $request->device,
+            'description' => $request->description,
             'service_start_time' => $now,
             'service_status' => 'ACCEPTED',
             'price' => $request->price,
