@@ -1,21 +1,21 @@
 @extends('/customer_view.template')
 
 @section('main-content')
-<section class="mb-4">
+<section class="mb-4 py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Add service</h6>
+                        <h1>New service</h1>
                     </div>
                     <div class="card-body">
-                        <div class="col-lg-6">
+                        <div class="col-lg-auto">
                             <form action="{{ url('/dashboard/service') }}" method="post">
                                 @csrf
                                 {{-- kolom nama --}}
                                 <label class="mt-2" for="nameid">Customer Id</label>
-                                <input type="text" name="nameid" id="nameid" class="form-control @error('nameid') is-invalid @enderror" placeholder="name id" >
+                                <input type="text" name="nameid" id="nameid" class="form-control @error('nameid') is-invalid @enderror" placeholder="name id" value="{{$data}}">
                                 @error('nameid')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -24,7 +24,7 @@
 
                                 {{-- kolom payment --}}
                                 <label class="mt-2" for="payment">Payment</label>
-                                <select name="payment" id="payment" class="form-select @error('payment') is-invalid @enderror">
+                                <select name="payment" id="payment" class="custom-select d-block w-100 @error('payment') is-invalid @enderror">
                                     <option value="">Select type</option>
                                     <option value="QRIS">QRIS</option>
                                     <option value="BCA">BCA</option>

@@ -37,7 +37,7 @@ class CustomerViewService extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
             return redirect('/login/customer');
         }
-        return view('customer_view.createservice');
+        $data = Service::where('customer_id','=',Session::get('loginid'))->get();
     }
 
     /**
