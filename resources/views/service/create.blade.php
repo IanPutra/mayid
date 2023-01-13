@@ -58,7 +58,7 @@
 
                                 {{-- kolom deskripsi --}}
                                 <label class="mt-2" for="description">Description</label>
-                                <input type="number" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="description" >
+                                <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="description" >
                                 @error('description')
                                 <div class="invalid-feedback">
                                     {{ $message }}
