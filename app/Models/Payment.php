@@ -19,4 +19,9 @@ class Payment extends Model
         'payment_verification',
         'time_verification'
     ];
+
+    public function service()
+    {
+        return $this->belongsTo('App\Models\Service','payment_id','payment_id');
+    }
 }

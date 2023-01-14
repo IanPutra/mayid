@@ -24,4 +24,14 @@ class Service extends Model
         'device_pickup_time',
         'price'
     ];
+
+    public function progress()
+    {
+        return $this->hasMany('App\Models\Progress','service_id','service_id');
+    }
+
+    public function payment()
+    {
+        return $this->hasMany('App\Models\Payment','payment_id','payment_id');
+    }
 }

@@ -6,6 +6,9 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreadminRequest;
 use App\Http\Requests\UpdateadminRequest;
+use App\Models\Service;
+use App\Models\Progress;
+
 // tambahkan ke semua controller
 use Illuminate\Support\Facades\Session;
 
@@ -32,7 +35,12 @@ class AdminController extends Controller
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        return view('dashboard');
+        // SELECT progress.progress_id, progress.admin_id, progress.time, progress.detail, service.* FROM progress
+        // JOIN service ON progress.service_id = service.service_id;
+
+        $data = Progress::with('service')->where('admin_id','=',Session::get('loginid'))->get();
+        // $data = Service::where('admin_id','=',Session::get('loginid'))->get();
+        return view('dashboard',['data'=>$data]);
     }
 
     /**
@@ -172,4 +180,5 @@ class AdminController extends Controller
         $data->delete();
         return redirect('/dashboard/admin')->with('status','Data '.$data->username.' has been removed');
     }
+    
 }

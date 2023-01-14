@@ -19,4 +19,9 @@ class Progress extends Model
         'time',
         'detail'
     ];
+
+    public function service()
+    {
+        return $this->belongsTo('App\Models\Service','service_id','service_id');
+    }
 }

@@ -20,7 +20,7 @@ class CustomerViewService extends Controller
     {
         // copy ini ke semua controller customerview
         if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
-            return redirect('/login/customer');
+            return redirect('/login');
         }
         $data = Service::where('customer_id','=',Session::get('loginid'))->get();
         return view('customer_view.bookservice',['data'=>$data]);
@@ -29,7 +29,7 @@ class CustomerViewService extends Controller
     public function detailProgress($id)
     {
         if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
-            return redirect('/login/customer');
+            return redirect('/login');
         }
         $service = Service::find($id);
         $progress = Progress::where('service_id','=',$id)->orderBy('time','DESC')->get();
@@ -45,7 +45,7 @@ class CustomerViewService extends Controller
     {
         // copy ini ke semua controller CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
-            return redirect('/login/customer');
+            return redirect('/login');
         }
         $data = Service::where('customer_id','=',Session::get('loginid'))->get();
         return view('customer_view.createservice',['data'=>$data]);
@@ -61,7 +61,7 @@ class CustomerViewService extends Controller
     {
         // copy ini ke semua controller CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
-            return redirect('/login/customer');
+            return redirect('/login');
         }
 
         $request->validate([
@@ -109,7 +109,7 @@ class CustomerViewService extends Controller
     {
         // copy ini ke semua controller CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
-            return redirect('/login/customer');
+            return redirect('/login');
         }
         return view('bookservice.create');
     }
