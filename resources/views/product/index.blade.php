@@ -56,7 +56,11 @@
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div>
-                                                    <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+                                                    @if($product->image != null)
+                                                        <img src="{{url('/assets/product-image/'.$product->image)}}" class="avatar avatar-sm me-3" alt="user1">
+                                                    @else
+                                                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+                                                    @endif
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="mb-0 text-sm">{{ $product->name }}</h6>
