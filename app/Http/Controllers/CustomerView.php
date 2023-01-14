@@ -18,7 +18,7 @@ class CustomerView extends Controller
     public function product()
     {
         $data = Product::all();
-        return view('customer_view.product', compact('data'));
+        return view('customer_view.newproduct', compact('data'));
     }
 
     public function productbuy($id)

@@ -14,6 +14,7 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
+      <link id="pagestyle" href="{{ url('assets/css/soft-ui-dashboard.css?v=1.0.7') }}" rel="stylesheet" />
       <!-- bootstrap css -->
       <link rel="stylesheet" href="{{ url('/cus_asset/css/bootstrap.min.css') }}">
       <!-- style css -->
@@ -30,6 +31,11 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <style>
+         .navbar {
+            box-shadow: none;
+         }
+      </style>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -98,6 +104,7 @@
       @yield('main-content');
       <!-- end footer -->
       <!-- Javascript files-->
+      <script src="{{ url('assets/js/soft-ui-dashboard.min.js?v=1.0.7') }}"></script>
       <script src="{{ url('/cus_asset/js/jquery.min.js') }}"></script>
       <script src="{{ url('/cus_asset/js/popper.min.js') }}"></script>
       <script src="{{ url('/cus_asset/js/bootstrap.bundle.min.js') }}"></script>
