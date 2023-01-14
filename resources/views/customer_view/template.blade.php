@@ -78,9 +78,6 @@
                               <li class="nav-item {{ Request::is('product') ? 'active' : '' }}">
                                  <a class="nav-link" href="{{ url('/product') }}">Product</a>
                               </li>
-                              <li class="nav-item {{ Request::is('contact-us') ? 'active' : '' }}">
-                                 <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
-                              </li>
                               @if(Session::get('login'))
                               <li class="nav-item {{ Request::is('logout') ? 'active' : '' }}">
                                  <a class="nav-link" href="{{ url('/logout') }}">Logout</a>

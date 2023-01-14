@@ -1,4 +1,4 @@
-{{-- tetep --}}
+
 @extends('customer_view.template')
 
 
@@ -39,7 +39,7 @@
                                                     {{ $item->name }}
                                                 </h5>
                                                 <p class="mb-0 font-weight-bold text-sm">
-                                                    {{ 'Rp'.' '.$item->price }}
+                                                    Rp {{ number_format($item->price,0,",",".") }}
                                                 </p>
                                             </div>
                                         </div>

@@ -41,9 +41,9 @@ class CustomerView extends Controller
         return view('customer_view.about');
     }
 
-    public function contactUs()
+    public function cart()
     {
-        return view('customer_view.contact');
+        return view('customer_view.cart');
     }
     
     public function services()

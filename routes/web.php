@@ -33,7 +33,7 @@ Route::get('/product', [CustomerView::class, 'product']);
 Route::get('/product-buy/{id}', [CustomerView::class, 'productbuy']);
 Route::get('/about', [CustomerView::class, 'about']);
 Route::get('/services', [CustomerView::class, 'services']);
-Route::get('/contact-us', [CustomerView::class, 'contactUs']);
+Route::get('/cart', [CustomerView::class, 'cart']);
 Route::get('/bookservice', [CustomerViewService::class, 'index']);
 Route::get('/servicenow', [CustomerViewService::class, 'create']);
 Route::post('/servicenow', [CustomerViewService::class, 'store']);
