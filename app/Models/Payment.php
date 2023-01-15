@@ -16,6 +16,7 @@ class Payment extends Model
     protected $fillable = [
         'method',
         'time',
+        'payment_code',
         'payment_verification',
         'time_verification'
     ];

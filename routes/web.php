@@ -31,6 +31,7 @@ use App\Http\Controllers\Auth;
 Route::get('/', [CustomerView::class, 'index']);
 Route::get('/product', [CustomerView::class, 'product']);
 Route::get('/product-buy/{id}', [CustomerView::class, 'productbuy']);
+Route::post('/product/buy', [CustomerView::class, 'buy']);
 Route::get('/about', [CustomerView::class, 'about']);
 Route::get('/services', [CustomerView::class, 'services']);
 Route::get('/cart', [CustomerView::class, 'cart']);

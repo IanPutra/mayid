@@ -61,15 +61,17 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <form action="" method="post">
+                                    <form action="{{ url('/product/buy') }}" method="post">
+                                        @csrf
                                         <div class="input-group">
-                                            <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" name="paymentMethod">
-                                                <option selected>Choose...</option>
-                                                <option value="1">QRIS</option>
-                                                <option value="2">BCA</option>
-                                                <option value="3">MANDIRI</option>
+                                            <input type="hidden" name="productId" value={{ $data->product_id }}>
+                                            <select class="form-select @error('paymentMethod') is-invalid @enderror " id="inputGroupSelect04" aria-label="Example select with button addon" name="paymentMethod">
+                                                <option value="">Choose...</option>
+                                                <option value="QRIS">QRIS</option>
+                                                <option value="BCA">BCA</option>
+                                                <option value="MANDIRI">MANDIRI</option>
                                             </select>
-                                            <input class="btn btn-outline-secondary mb-0" type="submit" value="BUY">
+                                            <button class="btn btn-outline-secondary mb-0" type="submit">BUY</button>
                                         </div>
                                     </form>
                                 </div>
