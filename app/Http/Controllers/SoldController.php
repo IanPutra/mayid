@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use App\Models\Sold;
 use App\Models\Payment;
 use App\Models\Customer;
@@ -26,6 +27,9 @@ class SoldController extends Controller
             return redirect('/login/admin');
         }
         $data = Sold::get();
+
+        // $dataa = Sold::where('customer_id','=',Session::get('loginid'))->get();
+        // ini ntar bakal keluar data pembelian sesuai yang login
         return view('sold.newsold',['data'=>$data]);
     }
 
@@ -151,18 +155,32 @@ class SoldController extends Controller
         return redirect('/dashboard/sold');
     }
 
-    public function deliver(Request $request)
+    public function verifiedPayment($id)
     {
-        // copy ini ke semua controller kecuali Auth dan CostumerView
         if(!Session::get('login') || Session::get('loginrole') !== 'admin') {
             return redirect('/login/admin');
         }
-        // variabel buat ambil jam skrg
-        $now = now()->format('Y-m-d H:i:s');
 
-        $sold = Sold::find($request->soldId);
+        // update status di sold jd delivered
+        $sold = Sold::find($id);
+        $sold->status = 'READY';
+        $sold->save();
+
+        // update status di payment jd paid
+        $payment = Payment::find($sold->payment_id);
+        $payment->payment_verification = 'PAID';
+        $payment->time_verification = new DateTime();
+        $payment->save();
+
+        return redirect('/dashboard/sold')->with('status','Product payment has been verified!');
+    }
+
+    public function deliver($id)
+    {
+        // update status di sold jd delivered
+        $sold = Sold::find($id);
         $sold->status = 'DELIVERED';
-        $sold->time_deliver = $now;
+        $sold->time_deliver = new DateTime();
         $sold->save();
 
         return redirect('/dashboard/sold')->with('status','Product has been delivered!');

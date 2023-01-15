@@ -20,4 +20,14 @@ class Sold extends Model
         'status',
         'time_deliver',
     ];
+
+    public function Product()
+    {
+        return $this->belongsTo('App\Models\Product','product_id','product_id');
+    }
+
+    public function Customer()
+    {
+        return $this->belongsTo('App\Models\Customer','customer_id','customer_id');
+    }
 }

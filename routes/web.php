@@ -56,15 +56,16 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('/customer', CustomerController::class);
     Route::resource('/product', ProductController::class);
     Route::resource('/service', ServiceController::class);
+    Route::get('/sold/{sold}/deliver', [SoldController::class, 'deliver']);
+    Route::get('/sold/{sold}/verified', [SoldController::class, 'verifiedPayment']);
     Route::resource('/sold', SoldController::class);
     Route::resource('/payment', PaymentController::class);
     Route::get('service/{id}/progress', [ServiceController::class, 'editprogress']);
     Route::get('service/{id}/detail-progress', [ServiceController::class, 'detailprogress']);
-    Route::post('service/update-progress', [ServiceController::class, 'updateprogress']);
-    Route::post('service/pickup', [ServiceController::class, 'pickup']);
-    Route::post('sold/deliver', [SoldController::class, 'deliver']);
-    Route::get('/upload', 'UploadController@upload');
-    Route::post('/upload/proses', 'UploadController@proses_upload');
+    Route::post('/service/update-progress', [ServiceController::class, 'updateprogress']);
+    Route::post('/service/pickup', [ServiceController::class, 'pickup']);
+    // Route::get('/upload', 'UploadController@upload');
+    // Route::post('/upload/proses', 'UploadController@proses_upload');
 });
 
 Route::prefix('ian')->group(function () {

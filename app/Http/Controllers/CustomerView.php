@@ -20,7 +20,7 @@ class CustomerView extends Controller
 
     public function product()
     {
-        $data = Product::all();
+        $data = Product::where('amount','>',0)->get();
         return view('customer_view.newproduct', compact('data'));
     }
 
@@ -66,6 +66,10 @@ class CustomerView extends Controller
 
     public function buy(Request $request)
     {
+        if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
+            return redirect('/login');
+        }
+
         $request->validate([
             'productId' => 'required',
             'paymentMethod' => 'required|not_in:0'
@@ -87,6 +91,11 @@ class CustomerView extends Controller
             $paycode = $generate;
         } while (Payment::where('payment_code','=',$paycode)->count() > 0); // cek udh ada yang payment codenya gini ga
 
+        // kurangin stok
+        $product = Product::find($request->productId);
+        $product->amount = $product->amount-1;
+        $product->save();
+
         // tambah payment
         $paymentData = [
             'method' => $request->paymentMethod,
@@ -96,7 +105,6 @@ class CustomerView extends Controller
         ];
 
         $payment = Payment::create($paymentData);
-
 
         // tambah data sold
         $soldData = [

@@ -16,6 +16,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @if(session()->has('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+                @endif
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                     <div class="row">
@@ -34,7 +39,7 @@
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Sold id</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Payment id</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product id</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Product</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Customer id</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                                 <th class="text-secondary opacity-7"></th>
@@ -57,10 +62,10 @@
                                     </div>
                                 </td>
                                 <td class="text-center">
-                                    <p class="text-xs font-weight-bold mb-0">{{$datas->product_id}}</p>  
+                                    <p class="text-xs font-weight-bold mb-0">{{$datas->Product->name}}</p>  
                                 </td>
                                 <td class="align-middle text-center text-sm">
-                                    <span class="text-secondary text-xs font-weight-bold">{{$datas->customer_id}}</span>
+                                    <span class="text-secondary text-xs font-weight-bold">{{$datas->Customer->username}}</span>
                                 </td>
                                 <td class="align-middle text-center">
                                 <span class="badge badge-sm bg-gradient-{{$datas->status == 'DELIVERED' ? 'success' : 'warning'}}">{{$datas->status}}</span>
@@ -69,13 +74,12 @@
                                             <a href="{{ url('/dashboard/sold/'.$datas->sold_id.'/edit') }}" class="btn btn-primary btn-sm ms-2" data-toggle="tooltip" data-original-title="Edit Admin">
                                                 <i class="fas fa-pencil"></i>
                                             </a>
+                                            @if($datas->status === 'READY')
+                                                <a href="{{ url('dashboard/sold/'.$datas->sold_id.'/deliver') }}" class="btn btn-success ms-2 btn-sm"><i class="fas fa-handshake"></i></a>
+                                            @endif
                                             <!-- cek kalo statusnya masih pending baru tambil tombol untuk deliver -->
                                             @if($datas->status === 'PENDING')
-                                            <form action="{{ url('dashboard/sold/deliver') }}" method="post">
-                                                @csrf
-                                                <input type="hidden" name="soldId" value="{{ $datas->sold_id }}">
-                                                <button class="btn btn-success ms-2 btn-sm" onclick="return confirm('Confirm deliver?');"><i class="fas fa-handshake"></i></button>
-                                            </form>
+                                                <a href="{{ url('dashboard/sold/'.$datas->sold_id.'/verified') }}" class="btn btn-success ms-2 btn-sm"><i class="fas fa-check"></i></a>
                                             @endif
 
                                             <form action="{{ url('dashboard/sold/'.$datas->sold_id) }}" method="post">

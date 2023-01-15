@@ -21,4 +21,9 @@ class Product extends Model
         'amount',
         'price',
     ];
+
+    public function Sold()
+    {
+        return $this->hasMany('App\Models\Sold','product_id','product_id');
+    }
 }

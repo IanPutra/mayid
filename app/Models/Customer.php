@@ -21,4 +21,9 @@ class Customer extends Model
         'gender',
         'address',
     ];
+
+    public function Sold()
+    {
+        return $this->hasMany('App\Models\Sold','customer_id','customer_id');
+    }
 }
