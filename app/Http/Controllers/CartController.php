@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Models\Sold;
 
 class CartController extends Controller
 {
@@ -14,7 +16,13 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        if(!Session::get('login') || Session::get('loginrole') !== 'customer') {
+            return redirect('/login');
+        }
+
+        $data = Sold::where('customer_id','=',Session::get('loginid'))->get();
+        // ini ntar bakal keluar data pembelian sesuai yang login
+        return view('customer_view.cartproduct',['data'=>$data]);
     }
 
     /**

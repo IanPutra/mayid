@@ -13,6 +13,7 @@ use App\Http\Controllers\SoldController;
 use App\Http\Controllers\CustomerView;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CustomerViewService;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerViewProgress;
 use App\Http\Controllers\Auth;
 
@@ -39,6 +40,8 @@ Route::get('/bookservice', [CustomerViewService::class, 'index']);
 Route::get('/servicenow', [CustomerViewService::class, 'create']);
 Route::post('/servicenow', [CustomerViewService::class, 'store']);
 Route::get('/progressdetail/{id}', [CustomerViewService::class, 'detailProgress']);
+Route::get('/cart',[CartController::class,'index']);
+// kalo akses link /cart bakal diarahin ke CartController yang nama functionnya index
 
 Route::get('/login', [Auth::class, 'index']);
 Route::get('/login/admin', [Auth::class, 'admin']);
