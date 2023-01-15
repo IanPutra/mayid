@@ -63,8 +63,8 @@
                                     @if($datas->service_end_time !== NULL && $datas->device_pickup_time === NULL )
                                     <form action="{{ url('dashboard/service/pickup') }}" method="post">
                                         @csrf
-                                        <input type="hidden" name="serviceId" value="{{ $datas->service_id }}">
-                                        <button class="btn btn-success ms-2 btn-sm" onclick="return confirm('Confirm pick up {{ $datas->name }} ?');"><i class="fas fa-handshake"></i></button>
+                                        <input type="hidden" name="serviceId" value="{{ $datas->service_id }}">          
+                                        <button class="btn btn-success ms-2 btn-sm" onclick="return confirm('Confirm pick up {{ $datas->name }} ?');"><i class="fas fa-handshake">Pick up</i></button>
                                     </form>
                                     @endif
                                 </td>
