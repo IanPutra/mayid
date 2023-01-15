@@ -6,7 +6,7 @@
       <!-- banner -->
       <section class="banner_main">
          <div id="banner1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators mt-5 mb-0">
+            <ol class="carousel-indicators pt-4 mb-0">
                <li data-target="#banner1" data-slide-to="0" class="active"></li>
                <li data-target="#banner1" data-slide-to="1"></li>
                <li data-target="#banner1" data-slide-to="2"></li>
@@ -24,8 +24,31 @@
                                  <a href="{{ url('/product') }}">Buy Now</a>
                               </div>
                            </div>
-                           <div class="col-md-6 ml-auto ms-5">
-                              <i><img src="{{ url('/cus_asset/images/chair.png') }}" width="200%" class="rounded float-right"></i>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <img src="{{ url('/cus_asset/images/chair.png') }}" class="img rounded">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="text-bg">
+                                 <span>Computer And Laptop</span>
+                                 <h1>Services</h1>  
+                                 <p>If you need a spare part, you can buy it right away or maybe you want to upgrade your PC, you can order it right away and also buy it by pre-order.</p>
+                                 <a href="{{ url('/product') }}">Buy Now </a> 
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="text_img">
+                                 <figure><img src="{{ url('/cus_asset/images/chair.png') }}" alt="#"/></figure>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -39,34 +62,13 @@
                               <div class="text-bg">
                                  <span>Computer And Laptop</span>
                                  <h1>Services</h1>
-                                 <p>If you need a spare part, you can buy it right away or maybe you want to upgrade your PC, you can order it right away and also buy it by pre-order.</p>
-                                 <a href="{{ url('/product') }}">Buy Now </a> 
+                                 <p>Having problems with your laptop or computer? immediately visit the service to find out what happened to your laptop or computer. </p>
+                                 <a href="{{ url('/services') }}">Service now </a> 
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="text_img">
-                                 <figure><img src="{{ url('/cus_asset/images/pct.png') }}" alt="#"/></figure>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="text-bg">
-                                 <span>Computer And Laptop</span>
-                                 <h1>Accessories</h1>
-                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
-                                 <a href="{{ url('/product') }}">Buy Now </a> 
-                              </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="text_img">
-                                 <figure><img src="{{ url('/cus_asset/images/pct.png') }}" alt="#"/></figure>
+                                 <figure><img src="{{ url('/cus_asset/images/chair.png') }}" alt="#"/></figure>
                               </div>
                            </div>
                         </div>

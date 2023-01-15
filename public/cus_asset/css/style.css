@@ -446,15 +446,15 @@ ul.btn li:last-child {
      padding-top: 70px;
 }
 
-.text_img {
+/* .text_img {
      margin-right: -130px;
-}
+} */
 
 .text_img figure {
      margin: 0;
 }
 
-.text_img figure img {
+.text_img img {
      width: 100%;
 }
 
@@ -462,9 +462,7 @@ ul.btn li:last-child {
      position: inherit;
 }
 
-#banner1 .carousel-inner {
-     padding-right: 130px;
-}
+
 
 #banner1 .carousel-indicators {
      left: inherit;
@@ -759,7 +757,7 @@ ul.btn li:last-child {
 .customer_Carousel .carousel-indicators {
      bottom: -50px;
      right: inherit;
-     margin-left: 4px;
+  
 }
 
 .customer_Carousel .carousel-indicators li {
