@@ -73,9 +73,26 @@ class CustomerViewService extends Controller
         // variabel buat ambil jam skrg
         $now = now()->format('Y-m-d H:i:s');
 
+        $char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $int = '1234567890';
+
+        //generate
+        $paycode = '';
+        do {
+            $generate = '';
+            for ($i = 0; $i < 3; $i++) {
+            $generate .= $char[rand(0, 26 - 1)];
+            }
+            for ($i = 3; $i < 16; $i++) {
+                $generate .= $int[rand(0, 10 - 1)];
+            }
+            $paycode = $generate;
+        } while (Payment::where('payment_code','=',$paycode)->count() > 0); // cek udh ada yang payment codenya gini ga
+
         // data dimasukin ke payment
         $datapayment = [
             'method' => $request->payment,
+            'payment_code' => $paycode,
             'time' => $now,
             'payment_verification' => 'PENDING',
         ];
